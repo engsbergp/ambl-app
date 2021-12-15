@@ -4,8 +4,7 @@ import Header from '../components/header';
 import Footer from '../components/footer';
 import VisualizerControls from '../components/visualizer/visualizerControls';
 import Visualization from '../components/visualizer/visualization';
-import FullScreenButton from '../components/misc/fullScreenButton';
-
+import FullScreenHome from '../components/misc/fullScreenHome';
 import './visualizer.scss';
 
 function Visualizer() {
@@ -22,7 +21,7 @@ function Visualizer() {
         <Visualization 
           currentVisualizer={activeVisualizer}
         />
-        <FullScreenButton/>
+        <FullScreenHome/>
       <Footer/>
     </div>
   )

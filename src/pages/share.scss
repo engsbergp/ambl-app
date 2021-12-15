@@ -1,0 +1,37 @@
+.share{
+  display: flex;
+  flex-direction: column;
+  width:100vw;
+  height:100vh;
+  overflow:hidden;
+
+  &-latest{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height:33%;
+    width:100%;
+    margin-top:1rem;
+    outline:1px solid #999;
+  }
+
+  &-trending{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height:33%;
+    width:100%;
+  }
+
+  &-connections{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height:34%;
+    width:100%;
+    outline:1px solid #999;
+  }
+}

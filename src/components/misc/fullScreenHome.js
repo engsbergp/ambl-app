@@ -2,7 +2,7 @@ import React from 'react';
 import './misc.scss';
 import * as AiIcons from 'react-icons/ai';
 
-const fullScreenButton = () => {
+const fullScreenHome = () => {
 
   function getFullscreenElement() {
     return document.fullscreenElement
@@ -22,14 +22,12 @@ const fullScreenButton = () => {
     } 
 
   return (
-    <div className="full-screen-button">
+    <div className="full-screen-home">
       <AiIcons.AiOutlineFullscreen
         onClick={toggleFullscreen}
-      >
-
-      </AiIcons.AiOutlineFullscreen>
+      />
     </div>
   )
 }
 
-export default fullScreenButton
+export default fullScreenHome
