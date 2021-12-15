@@ -1,0 +1,40 @@
+.about{
+
+  &-list{
+    margin-left:3rem;
+  }
+
+  &-text{
+    // font-size: .8rem;
+    height:100%;
+    padding:2rem ;
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+    // overflow: auto;
+  }
+}
+
+.next{
+  display: flex;
+  flex-direction: row;
+  // justify-content: center;
+  align-items: center;
+  // gap:70vw;
+
+  &-icon{
+    transform:scale(2.5);
+    color:#999;
+    position:absolute ;
+    bottom:5rem;
+    right:4rem;
+    
+  }
+  &-icon-back{
+    transform:scale(2.5) rotate(180deg);
+    color:#999;
+    position:absolute ;
+    bottom:5rem;
+    left:4rem;
+  }
+}

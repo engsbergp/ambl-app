@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+.App{
+ background-color: #444;
+ display:flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ height:100vh;
+ width:100vw;
+ color:#fff;
+ padding:2rem;
+}
+
+.player-controls{
+  width:3.5rem;
+  height:2.5rem;
+  border-radius:5px;
+  margin:5px;
+}
+.player-controls-container{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.player{
+  height:33%;
+  margin:10px;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.viewer{
+  height:100%;
+  width:100%;
+}
+
+.video-player{
+  height:100%;
+  width:100%;
+}
+
+.drop-video{
+  height:10rem;
+  width:25rem;
+  outline: 1px dashed #fff;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+}
+
+.drop-audio{
+  height:10rem;
+  width:25rem;
+  outline:1px dashed #fff;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+}
+
+.drop-image{
+  height:10rem;
+  width:25rem;
+  outline:1px dashed #fff;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+}
+
+.drop-image:hover{
+  background: #777;
+  cursor: pointer;
+}
+
+.image-thumbnail{
+  width:200px;
+}
+
+
+

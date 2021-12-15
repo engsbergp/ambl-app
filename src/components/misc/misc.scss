@@ -1,0 +1,14 @@
+.full-screen-button{
+  display:flex;
+  position:absolute;
+  transform:scale(3);
+  color:grey;
+  opacity:.75;
+  bottom:4.25rem;
+  left:2rem;
+  transition: .25s;
+}
+
+.full-screen-button:hover{
+  color:white;
+}
