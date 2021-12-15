@@ -1,7 +1,5 @@
 import React, {useState} from 'react';
 import visualizationData from '../components/visualizer/visualizationData.json';
-import Header from '../components/header';
-import Footer from '../components/footer';
 import VisualizerControls from '../components/visualizer/visualizerControls';
 import Visualization from '../components/visualizer/visualization';
 import FullScreenHome from '../components/misc/fullScreenHome';
@@ -13,7 +11,6 @@ function Visualizer() {
 
   return (
     <div className="visualizer">
-      <Header/>
         <VisualizerControls
           visData={data}
           changeVisualization={activeVisualizer => setActiveVisualizer(activeVisualizer)}
@@ -22,7 +19,6 @@ function Visualizer() {
           currentVisualizer={activeVisualizer}
         />
         <FullScreenHome/>
-      <Footer/>
     </div>
   )
 }

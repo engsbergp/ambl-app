@@ -1,7 +1,5 @@
 import React from 'react';
 import {useHistory} from 'react-router-dom';
-import Header from '../components/header';
-import Footer from '../components/footer';
 import * as GrIcons from 'react-icons/gr';
 import './about.scss';
 
@@ -15,7 +13,6 @@ function About() {
 
   return (
     <div className="about">
-      <Header/>
         <div className="about-text">
           <h1>Ambient Landscapes (AMBL)</h1>
           <p>The ambient landscape platform is an ecosystem for collectors, curators, enjoyers, and artists to integrate blockchain art into their daily lives</p>
@@ -26,7 +23,6 @@ function About() {
         <div className="next">
           <GrIcons.GrLinkNext onClick={goAbout2} className="next-icon"/>
         </div>
-      <Footer/>
     </div>
   )
 }

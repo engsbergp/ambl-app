@@ -1,7 +1,5 @@
 import React from 'react';
 import {useHistory} from 'react-router-dom';
-import Header from '../components/header';
-import Footer from '../components/footer';
 import * as GrIcons from 'react-icons/gr';
 import './about.scss';
 
@@ -19,7 +17,6 @@ function About2() {
 
   return (
     <div className="about">
-      <Header/>
       <p>The platform's economy will be managed by the AMBL token. Users will be rewarded with the token for...</p>
           <ul className="about-list">
             <li>minting NFT's</li>
@@ -39,8 +36,6 @@ function About2() {
           <GrIcons.GrLinkNext onClick={goAbout} className="next-icon-back"/>
           <GrIcons.GrLinkNext onClick={goAbout3} className="next-icon"/>
         </div>
-
-      <Footer/>
     </div>
   )
 }
