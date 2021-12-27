@@ -14,10 +14,22 @@
         "link":"https://editor.p5js.org/philengsberg/full/Z1dUuPZF6"
       },
       {
+        "name": "picture1",
+        "curator": "phil",
+        "filetype":"javascript",
+        "link":"https://editor.p5js.org/philengsberg/full/xG8OhVcHF"
+      },
+      {
         "name": "bars",
         "curator": "phil",
         "filetype":"javascript",
         "link":"https://editor.p5js.org/philengsberg/full/yvHSV9-jE"
+      },
+      {
+        "name": "picture2",
+        "curator": "phil",
+        "filetype":"javascript",
+        "link":"https://editor.p5js.org/philengsberg/full/etV7ZvHJ_"
       },
       {
         "name": "landscape",
@@ -36,30 +48,6 @@
         "curator": "phil",
         "filetype":"javascript",
         "link":"https://editor.p5js.org/philengsberg/full/ibwGrCGtF"
-      },
-      {
-        "name": "photo",
-        "curator": "phil",
-        "filetype":"javascript",
-        "link":"IR-211026-7-min.jpg"
-      },
-      {
-        "name": "my eighth visual",
-        "curator": "phil",
-        "filetype":"javascript",
-        "link":""
-      },
-      {
-        "name": "my ninth visual",
-        "curator": "phil",
-        "filetype":"javascript",
-        "link":""
-      },
-      {
-        "name": "my tenth visual",
-        "curator": "phil",
-        "filetype":"javascript",
-        "link":""
       }
 	]
 }

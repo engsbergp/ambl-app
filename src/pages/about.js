@@ -15,10 +15,27 @@ function About() {
     <div className="about">
         <div className="about-text">
           <h1>Ambient Landscapes (AMBL)</h1>
-          <p>The ambient landscape platform is an ecosystem for collectors, curators, enjoyers, and artists to integrate blockchain art into their daily lives</p>
-          <p>Users can connect their wallets from multiple blockchains (Tezos, Ethereum, Solana, Near), and display them in a variety of webframes, with a huge range of playback options</p>
-          <p>The AMBL app connects with the Spotify API, and enables artist and viewers with an interactive experience like nothing before. Digital artist have the opportunity to create generative and responsive art, available for sale directly on the AMBL platform.</p>
-
+          <p className="about-about">
+            An ecosystem for collectors, curators, enjoyers, and artists;  
+            to integrate blockchain art into daily lives through accessible 
+            aesthetics and multimedia experiences. A cross-blockchain NFT webframe 
+            and creation suite.
+          </p>
+          <p className="about-about">
+            <b>COLLECTORS</b> can connect their wallets from multiple blockchains 
+            (Tezos, Ethereum, Solana, Near), and showcase their NFTs with a huge 
+            range of playback options. Collectors are rewarded for supplying assets
+            to help build bridges between blockchains, and showcaseing your favorite 
+            works from your favorite creators.
+          </p>
+          <p className="about-about">
+            To connect with Spotify and other popular API's,
+            the platform encourages responsive and generative art.  
+            <b> ARTISTS</b> can mint an NFT to their blockchain of choice,
+            and have their work added to the library of visualizations. Generative artists 
+            will have support for widely used development languages, and more traditional
+            artists will have straightforward access to sophisticated minting tools.
+          </p>
         </div>
         <div className="next">
           <GrIcons.GrLinkNext onClick={goAbout2} className="next-icon"/>

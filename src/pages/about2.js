@@ -17,21 +17,27 @@ function About2() {
 
   return (
     <div className="about">
-      <p>The platform's economy will be managed by the AMBL token. Users will be rewarded with the token for...</p>
-          <ul className="about-list">
-            <li>minting NFT's</li>
-            <li>playing media through the platform</li>
-            <li>ICO airdrop</li>
-          </ul>
-          <p>Users can spend their AMBL tokens on...</p>
-            <ul className="about-list">
-              <li>voting on popular content</li>
-              <li>buying advertising space</li>
-              <li>swapping on DEX</li>
-            </ul>
-            <p>tokens will be resupplied into the AMBL ecosystem on a weekly basis</p>
-            <p>5% of the revinue reclaimed from advertising and voting will be donated to reforrestation programs</p>
-          <h2></h2>
+      <div className="about-text">
+        <p className="about-about">
+          As the library of content begins to grow, <b>CURATORS</b> will be able to 
+          access an enormous collection of NFT's submitted by artists and collectors.  
+          Curators will have the opportunity to create playlists, and establish 
+          relationships with artists, viewers, and collectors. Curators will have the
+          creative freedom to reorganize and relayer existing content to suit their
+          own style and fanbase.
+        </p>
+        <p className="about-about">
+          All users will have access to the comprehensice library of visualizations 
+          and the power to connect them to your favorite audio player. <b>ENJOYERS </b>
+          will have an experience catered by an ever-growing community of artists,
+          collectors, and curators.
+        </p>
+        <p className="about-about">Building a community is essential and part of 
+        the fun! Each user can enjoy the environment to their own level of dedication,
+        and this cooperation will pave the way for volumes of content,
+        and long-form advertising opportunities </p>
+      </div>
+
         <div className="next">
           <GrIcons.GrLinkNext onClick={goAbout} className="next-icon-back"/>
           <GrIcons.GrLinkNext onClick={goAbout3} className="next-icon"/>

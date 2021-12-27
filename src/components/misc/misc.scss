@@ -27,3 +27,13 @@
 .full-screen-play:hover{
   color:#eee;
 }
+
+@media (max-width:560px){
+  .full-screen-home{
+    display:none;
+  }
+  .full-screen-play{
+    display: none;
+  }
+
+}
