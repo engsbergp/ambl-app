@@ -1,0 +1,85 @@
+@media (max-width: 560px) {
+  .footer-playback {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: .75rem;
+    width: 30%;
+  }
+  .footer-arrows {
+    display: none;
+  }
+  .footer-time {
+    display: none;
+  }
+  .footer-play {
+    margin-right: 10px;
+  }
+  .footer-bars {
+    right: 1rem;
+  }
+  .footer-artwork {
+    display: none;
+  }
+  .footer-metadata-mobile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    overflow: none;
+    width: 100%;
+  }
+  .footer-metadata {
+    display: none;
+  }
+  .footer-expander {
+    width: 4rem;
+    min-width: 0;
+  }
+  .footer-button {
+    display: none;
+  }
+  .footer-button-mobile {
+    display: inline;
+    border-radius: none;
+    height: 9vh;
+    width: 25%;
+    background: transparent;
+    border: none;
+    color: #bbb;
+    -webkit-transition: .2s;
+    transition: .2s;
+    font-size: 1.1rem;
+  }
+  .footer-menu {
+    width: 100%;
+  }
+  .queue {
+    display: none;
+  }
+  .footeraudio-searchbar {
+    width: 100%;
+  }
+  .footeraudio-recentcard {
+    border-radius: 5px;
+    margin: 0 5px 0 5px;
+  }
+  .footeraudio-relatedcard {
+    width: calc(25% - 10px);
+    border-radius: 5px;
+    margin: 0 5px 0 5px;
+  }
+}
+/*# sourceMappingURL=footer-mobile.css.map */

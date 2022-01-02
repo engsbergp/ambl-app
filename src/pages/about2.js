@@ -1,7 +1,7 @@
 import React from 'react';
 import {useHistory} from 'react-router-dom';
 import * as GrIcons from 'react-icons/gr';
-import './about.scss';
+import '../scss/pages/about.scss';
 
 function About2() {
 

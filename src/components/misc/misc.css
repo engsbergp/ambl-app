@@ -1,0 +1,47 @@
+.full-screen-home {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  -webkit-transform: scale(3);
+          transform: scale(3);
+  color: #999;
+  opacity: .8;
+  bottom: 4.25rem;
+  left: 2rem;
+  -webkit-transition: .25s;
+  transition: .25s;
+}
+
+.full-screen-home:hover {
+  color: #eee;
+}
+
+.full-screen-play {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transform: scale(3);
+          transform: scale(3);
+  position: absolute;
+  left: 1.5rem;
+  bottom: 45%;
+  color: #999;
+  opacity: .8;
+  -webkit-transition: .25s;
+  transition: .25s;
+}
+
+.full-screen-play:hover {
+  color: #eee;
+}
+
+@media (max-width: 560px) {
+  .full-screen-home {
+    display: none;
+  }
+  .full-screen-play {
+    display: none;
+  }
+}
+/*# sourceMappingURL=misc.css.map */

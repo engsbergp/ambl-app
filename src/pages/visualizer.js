@@ -1,9 +1,8 @@
 import React from 'react';
-// import visualizationData from '../components/visualizer/visualizationData.json';
-// import VisualizerControls from '../components/visualizer/visualizerControls';
 import Visualization from '../components/visualizer/visualization';
+import SignUpForm from '../components/misc/SignUpForm';
 import FullScreenHome from '../components/misc/fullScreenHome';
-import './visualizer.scss';
+import '../scss/pages/visualizer.scss';
 
 function Visualizer() {
   // const data = visualizationData.visualizations;
@@ -12,13 +11,12 @@ function Visualizer() {
 
   return (
     <div className="visualizer">
+
         {/* <VisualizerControls
           visData={data}
           changeVisualization={activeVisualizer => setActiveVisualizer(activeVisualizer)}
         /> */}
-        <Visualization 
-          currentVisualizer={activeVisualizer}
-        />
+        <Visualization currentVisualizer={activeVisualizer}/>
         <FullScreenHome/>
     </div>
   )

@@ -1,6 +1,7 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-import './header.scss';
+import '../../scss/components/header-mobile.scss';
+import '../../scss/utility/body.scss';
 
 function HeaderExpanded() {
   return (

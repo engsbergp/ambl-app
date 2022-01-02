@@ -1,12 +1,18 @@
 import React from 'react';
-import FooterQueue from './FooterQueue';
-import FooterMenu from './FooterMenu';
+import AudioQueue from '../audio/AudioQueue';
+import AudioSearch from '../audio/AudioSearch';
 
-function FooterPlayer() {  
+function FooterPlayer(props) {  
   return (
     <>
-      <FooterQueue/>
-      <FooterMenu/>
+      {/* FOOTER AUDIO */}
+      <div className="footer-pages">
+        <AudioQueue />
+        <AudioSearch />
+      </div>
+      {/* FOOTER VISUAL */}
+      {/* FOOTER RECENT */}
+      {/* FOOTER COLLECTION */}
     </>
   )
 }

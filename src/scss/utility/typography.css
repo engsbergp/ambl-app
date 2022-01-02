@@ -1,0 +1,59 @@
+.modal-primary {
+  background: #777;
+  color: #bbb;
+}
+
+.btn-grey {
+  background: #777;
+  color: #eee;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.btn-grey:hover {
+  background: #656565;
+}
+
+.active {
+  color: #eee;
+}
+
+.select-white {
+  background: #ddd;
+  color: #252525;
+}
+
+.bg-white {
+  background: #eee;
+}
+
+.btn-transparent {
+  background: transparent;
+  color: #bbb;
+}
+
+.btn-transparent:hover {
+  background: #666;
+}
+
+.text-primary {
+  color: #bbb;
+}
+
+.navlink {
+  text-decoration: none;
+  color: #bbb;
+  margin: 0 1.5rem 0 1.5rem;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.navlink:hover {
+  color: #eee;
+}
+
+.icon-md {
+  color: #bbb;
+  font-size: 2rem;
+}
+/*# sourceMappingURL=typography.css.map */

@@ -1,0 +1,15 @@
+.hide {
+  height: 0;
+  opacity: 0;
+}
+
+.remove {
+  display: none;
+  height: 0;
+  opacity: 0;
+}
+
+.password-red {
+  outline: hls(90deg, 50%, 50%);
+}
+/*# sourceMappingURL=actions.css.map */

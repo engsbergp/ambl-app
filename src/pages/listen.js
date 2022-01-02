@@ -2,7 +2,7 @@ import React from 'react';
 import ListenControls from '../components/listen/ListenControls';
 import ListenPlaylists from '../components/listen/ListenPlaylists';
 import ListenBrowser from '../components/listen/ListenBrowser';
-import './listen.scss';
+import '../scss/pages/listen.scss';
 
 function Listen() {
   return (

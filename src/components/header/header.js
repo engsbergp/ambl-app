@@ -1,24 +1,33 @@
-import React, { useState } from 'react';
-import HeaderExpanded from './HeaderExpanded';
+import React, { useState, useContext } from 'react';
 import {useHistory, NavLink} from 'react-router-dom';
-import './header.scss';
+import * as ROUTES from '../../constants/routes'
+import HeaderExpanded from './HeaderExpanded';
+import ThemePicker from './ThemePicker';
+import SignUpModal from '../modals/SignUpModal';
 import * as FaIcons from 'react-icons/fa';
-// import axios from 'axios';
+import '../../scss/components/header.scss';
+import '../../scss/components/header-mobile.scss';
+import '../../scss/utility/body.scss';
+import '../../scss/utility/typography.scss';
+import { useSignUpModal, useToggleSignUpModal } from '../../context/ModalContext';
 
 
 function Header() {
 
   const history = useHistory();
-  const [spotifyConnected, setSpotifyConnected] = useState(false);
-  const [walletConnected, setWalletConnected] = useState(false);
-  const [headerExpanded, setHeaderExpanded] = useState(false);
+  const [ spotifyConnected, setSpotifyConnected ] = useState(false);
+  const [ walletConnected, setWalletConnected ] = useState(false);
+  const [ headerExpanded, setHeaderExpanded ] = useState(false);
+  const [ themeExpanded, setThemeExpanded ] = useState(false);
+  const { toggleSignUpModal }  = useToggleSignUpModal(); 
+  const { signUpModalOpen, setSignUpModalOpen } = useSignUpModal();
 
   function connectSpotify() {
-    setSpotifyConnected(true)
+    setSpotifyConnected(!spotifyConnected);
   };
 
   function connectWallet() {
-    setWalletConnected(true)
+    setWalletConnected(!walletConnected)
   };
 
   function goAbout() {
@@ -29,45 +38,56 @@ function Header() {
     setHeaderExpanded(!headerExpanded);
   }
 
+  function chooseTheme() {
+    setThemeExpanded(!themeExpanded);
+  }
+
   return (
+    
     <div className="header">
-      
-      <FaIcons.FaTree className="tree-icon" onClick={goAbout}/>
-      <FaIcons.FaTree className="tree-mobile" onClick={expandNav}/>
-  
-      {/* <HeaderExpanded/> */}
-      <div className="header-links">
-        <NavLink exact className="header-link" activeClassName="header-active" to="/">Home</NavLink>
-        <NavLink className="header-link" activeClassName="header-active" to="/listen">Listen</NavLink>
-        <NavLink className="header-link" activeClassName="header-active" to="/create">Create</NavLink>
-        <NavLink className="header-link" activeClassName="header-active" to="/play">Play</NavLink>
-        <NavLink className="header-link" activeClassName="header-active" to="/share">Share</NavLink>
-      </div>
+      <FaIcons.FaTree className="icon-md tree-icon" onClick={goAbout}/>
+      <FaIcons.FaTree className="icon-md tree-mobile" onClick={expandNav}/>
+        <NavLink exact className="navlink" activeClassName="active" to={ROUTES.HOME}>Home</NavLink>
+        <NavLink className="navlink" activeClassName="active" to={ROUTES.LISTEN}>Listen</NavLink>
+        <NavLink className="navlink" activeClassName="active" to={ROUTES.CREATE}>Create</NavLink>
+        <NavLink className="navlink" activeClassName="active" to={ROUTES.PLAY}>Play</NavLink>
+        <NavLink className="navlink" activeClassName="active" to={ROUTES.SHARE}>Share</NavLink>
       <div className="header-buttons">
+        
+        {signUpModalOpen && <SignUpModal/>}
+        
+        <button onClick={toggleSignUpModal} className="btn-circle-sm btn-grey">
+          sign up
+        </button>
+        
         {
          walletConnected ? 
-          <div className="header-connect-wallet">
+          <button onClick={connectWallet} className="btn-circle-sm btn-grey">
             <p>wallet connected!</p>
-          </div>
-          : 
-          <button onClick={connectWallet} className="header-connect-wallet">
-            connect wallet
           </button>
-         }
-        {
-         spotifyConnected ? 
-          <div className="header-connect-wallet">
-            <p>spotify connected!</p>
-          </div>
           : 
-          <button onClick={connectSpotify} className="header-connect-music">
-            connect music
+          <button onClick={connectWallet} className="btn-circle-sm btn-grey">
+            <p>connect wallet</p>
           </button>
          }
 
-        <div className="header-ambl-tokens">
+        {
+         spotifyConnected ? 
+          <button onClick={connectSpotify} className="btn-circle-sm btn-grey">
+            <p>spotify connected!</p>
+          </button>
+          : 
+          <button onClick={connectSpotify} className="btn-circle-sm btn-grey">
+            <p>connect spotify</p>
+          </button>
+         }
+
+        <button onClick={chooseTheme} className="btn-circle-sm btn-grey">
           100 AMBL
-        </div>
+        </button>
+      </div>
+      <div className={themeExpanded ? "header-themes show" : "header-themes"}>
+        <ThemePicker/>
       </div>
       <div className={headerExpanded ? "header-mobile show" : "header-mobile"}>
         <HeaderExpanded/>

@@ -1,7 +1,10 @@
 import React, {useState} from 'react'
 import * as FaIcons from 'react-icons/fa';
+import '../../scss/utility/typography.scss';
+import '../../scss/utility/body.scss';
 
-function FooterPlayback() {
+
+function FooterControls() {
 
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -14,26 +17,28 @@ function FooterPlayback() {
   }
 
   return (
-    <div className='footer-playback'>
+    <div className='footer-playback gap1'>
         <div className="footer-controls">
-          <button className="footer-arrows">
-            <FaIcons.FaAngleLeft/>
-          </button>
+          <FaIcons.FaAngleLeft className="icon-md"/>
           {
             isPlaying ? 
-              <button onClick={pauseMusic} className="footer-play">
+              <button 
+                onClick={pauseMusic} 
+                className="btn-icon-circle btn-grey"
+              >
                 <FaIcons.FaPause/>
               </button>
-              :
-              <button onClick={playMusic} className="footer-play">
-              <FaIcons.FaPlay/>
+             :
+              <button 
+                onClick={playMusic} 
+                className="btn-icon-circle btn-grey"
+              >
+                <FaIcons.FaPlay/>
               </button>
           }
-          <button className="footer-arrows">
-            <FaIcons.FaAngleRight/>
-          </button>
+          <FaIcons.FaAngleRight className="icon-md"/>
         </div>
-        <div className="footer-info">
+        <div className="footer-info gap1">
           <div className="footer-artwork"></div>
           <div className='footer-metadata'>
             <p>0:00 / 0:00</p>
@@ -48,4 +53,4 @@ function FooterPlayback() {
   )
 }
 
-export default FooterPlayback
+export default FooterControls

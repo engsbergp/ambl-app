@@ -5,7 +5,8 @@ import CreateMetadata from '../components/create/CreateMetadata';
 import CreateControls from '../components/create/CreateControls';
 import CreateMintBtn from '../components/create/CreateMintBtn';
 import CreatePreview from '../components/create/CreatePreview';
-import './create.scss';
+import SignUpModal from '../components/modals/SignUpModal';
+import '../scss/pages/create.scss';
 
 function Create() {
   return (
@@ -18,6 +19,7 @@ function Create() {
           <div className="create-bins">
             <CreateVideoBin/>
             <CreateAudioBin/>
+            <SignUpModal/>
           </div>
           <div className="create-mint">
             <CreateMetadata/>

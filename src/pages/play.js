@@ -3,7 +3,7 @@ import PlayControls from '../components/play/PlayControls';
 import PlaySidebar from '../components/play/PlaySidebar';
 import PlayBrowser from '../components/play/PlayBrowser';
 import PlayBin from '../components/play/PlayBin';
-import './play.scss';
+import '../scss/pages/play.scss';
 
 function Play() {
   return (
