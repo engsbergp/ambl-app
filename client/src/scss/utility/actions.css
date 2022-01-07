@@ -1,0 +1,11 @@
+.hide {
+  height: 0;
+  opacity: 0;
+}
+
+.remove {
+  display: none;
+  height: 0;
+  opacity: 0;
+}
+/*# sourceMappingURL=actions.css.map */

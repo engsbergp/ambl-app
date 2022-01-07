@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,KAAK,CAAA;EACH,MAAM,EAAC,CAAC;EACR,OAAO,EAAC,CAAC;CACV;;AAED,AAAA,OAAO,CAAA;EACL,OAAO,EAAC,IAAI;EACZ,MAAM,EAAC,CAAC;EACR,OAAO,EAAC,CAAC;CACV;;AAED,AAAA,aAAa,CAAA;EACX,OAAO,EAAC,oBAAoB;CAC7B",
-    "sources": [
-        "actions.scss"
-    ],
-    "names": [],
-    "file": "actions.css"
-}

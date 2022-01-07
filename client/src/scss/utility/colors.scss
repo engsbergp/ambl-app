@@ -1,0 +1,76 @@
+//BUTTON COLORS
+$btn-bg: #777;
+$btn-hover: #656565;
+
+//TEXT COLORS
+$text: #bbb;
+$text-active: #eee;
+$btn-text: #ddd;
+$select-text:#252525;
+
+//BODY COLORS
+$nav:#555;
+$body:#444;
+$outline: #666;
+$modal-bg: #777;
+
+//PLAYER COLORS
+$playhead:#4a4a4a;
+$length: #949494;
+
+
+  ///////////
+  //CLASSES//
+  ///////////
+
+.modal-primary{
+  background:$modal-bg;
+  color:$text;
+}
+
+.btn-grey{
+  background:$btn-bg;
+  color:$text-active;
+  transition:.2s
+}
+
+.btn-grey:hover{
+  background:$btn-hover;
+}
+
+.active{
+  color:$text-active;
+}
+
+.select-white{
+  background:$btn-text;
+  color:$select-text;
+}
+
+.bg-white{
+  background:$text-active;
+}
+
+.btn-transparent{
+  background:transparent;
+  color:$text;
+  transition: .2s
+}
+
+.btn-transparent:hover{
+  background:#666;
+}
+
+.text-primary{
+  color:$text;
+}
+
+.password-red{
+  outline:2px solid hsl(0 50% 50%);
+  border: none;
+}
+
+.password-green{
+  outline:2px solid hsl(130 40% 50%); 
+  border: none;
+}
