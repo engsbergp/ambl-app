@@ -4,7 +4,7 @@ import SpotifyWebApi from 'spotify-web-api-node';
 import axios from "axios";
 
 const spotifyApi = new SpotifyWebApi({
-  clientId: "7a3d7b5b794244a58b1ee120f9fc3989",
+  clientId: process.env.REACT_APP_SPOTIFY_CLIENT_ID,
 })
 
 const SpotifyPlaylistContext = React.createContext();

@@ -3,7 +3,12 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const SpotifyWebApi = require('spotify-web-api-node');
 
+require('dotenv').config({path: '../client/.env'});
+// require('dotenv').config();
+
 const app = express();
+const PORT = process.env.PORT || 8080;
+
 app.use(cors());
 app.use(bodyParser.json());
 
@@ -14,8 +19,8 @@ app.post('/refresh', (req, res) => {
   const refreshToken = req.body.refreshToken;
   const spotifyApi = new SpotifyWebApi({
     redirectUri: 'http://localhost:3000',
-    clientId: "7a3d7b5b794244a58b1ee120f9fc3989",
-    clientSecret: "ba6a496b14ca4adf94ea310ce7e3610d",
+    clientId: process.env.REACT_APP_SPOTIFY_CLIENT_ID,
+    clientSecret: process.env.REACT_APP_SPOTIFY_CLIENT_SECRET,
     refreshToken
   })
 
@@ -42,8 +47,8 @@ app.post('/login', (req, res) => {
   const code = req.body.code
   const spotifyApi = new SpotifyWebApi({
     redirectUri: 'http://localhost:3000',
-    clientId: "7a3d7b5b794244a58b1ee120f9fc3989",
-    clientSecret: "ba6a496b14ca4adf94ea310ce7e3610d",
+    clientId: process.env.REACT_APP_SPOTIFY_CLIENT_ID,
+    clientSecret: process.env.REACT_APP_SPOTIFY_CLIENT_SECRET,
   })
 
   spotifyApi
@@ -63,4 +68,4 @@ app.post('/login', (req, res) => {
   })
 })
 
-app.listen(3001)
+app.listen(PORT, console.log(`Server is Listening at ${PORT}`))

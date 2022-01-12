@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD9R6QTYEt7v3QmvqpEGxViKLmHYY9aSoU",
+  apiKey: 'AIzaSyD9R6QTYEt7v3QmvqpEGxViKLmHYY9aSoU',
   authDomain: "ambl-app.firebaseapp.com",
   projectId: "ambl-app",
   storageBucket: "ambl-app.appspot.com",
