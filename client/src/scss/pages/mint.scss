@@ -1,0 +1,54 @@
+.mint{
+  &-player{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+  }
+
+  &-iframe{
+    aspect-ratio: 16 / 9;
+    width:80%;
+    max-width: 720px;
+    border:none;
+  }
+  &-settings{
+    display:flex;
+    flex-direction:column;
+  }
+
+  &-options{
+
+    cursor:pointer;
+  }
+
+  &-back-btn{
+    display:flex;
+    position:absolute;
+    align-items:center;
+    justify-content:center;
+    top:4rem;
+    left:1rem;
+    height:2rem;
+    width:2rem;
+    border-radius:100vw;
+    border:none;
+    outline:none;
+    cursor:pointer;
+  }
+
+  &-waveform{
+    display:flex;
+    width:80%;
+    max-width: 720px;
+    height:2rem;
+  }
+
+  &-controls{
+    display:flex;
+    width:80%;
+    max-width: 720px;
+    height:3rem;
+  }
+
+}

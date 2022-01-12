@@ -1,18 +1,13 @@
 import React from 'react';
-import { useSpotifyPlaylists, useSongData, useSelectedPlaylist } from '../../context/AudioContext';
+import { useSpotifyPlaylists, useSelectedPlaylist } from '../../context/AudioContext';
 import '../../scss/utility/body.scss';
 import '../../scss/utility/colors.scss';
 
 function AudioQueue() {
 
-  const { songData } = useSongData();
   const { spotifyPlaylists } = useSpotifyPlaylists();
-  const { selectedPlaylist, setSelectedPlaylist } = useSelectedPlaylist();
+  const { selectedPlaylist, setSelectedPlaylist, selectedPlaylistTracks } = useSelectedPlaylist();
   
-  const songId = (() => {
-    let i = 0;
-    return () => i++;
-  })
 
   return (
         <div className="col30">
@@ -20,20 +15,35 @@ function AudioQueue() {
               className='select-md select-white'
               value={selectedPlaylist} 
               onChange={e => setSelectedPlaylist(e.target.value)} 
+              // selectedPlaylsit is the playlist ID
+              // sent to AudioContext, run getPlaylist function  
             >
-              {spotifyPlaylists.map((item, index) => 
-                <option key={index} value={item.value}>{item.name}</option>)}
+              {spotifyPlaylists.map(playlist => 
+                <option key={playlist.id} value={playlist.id}>
+                  {playlist.name}
+                </option>)
+              }
             </select>
-            <p>{selectedPlaylist}</p>
+            {/* <p>{selectedPlaylist}</p> */}
           <div className="overflow-y mt1 pb1">
-            {songData.songs.map((item, index) => {
+            {selectedPlaylistTracks.map(item => {
+
+                const smallestAlbumImage = item.track.album.images.reduce((smallest, image) => {
+                  if (image.height < smallest.height) return image
+                  return smallest
+                }, item.track.album.images[0])
+
+
                 return(
-                  <button key={item.name + songId} className="btn-list btn-transparent">
-                    <div className="thumbnail bg-white"></div>
-                    <p className="text-primary">{item.name}</p>
-                    <p className="text-primary">{item.artist}</p>
-                    <p className="text-primary">{item.length}</p>
-                  </button>
+                  
+                  <div key={item.track.id} className="row pr1 align-center pointer btn-transparent">
+                    <img src={smallestAlbumImage.url} className="thumbnail"/>
+                    <div className="flex column ml1">
+                      <p className="active">{item.track.name}</p>
+                      <p>{item.track.artists[0].name}</p>
+                      {/* <p className="text-primary">{item.track.duration_ms}</p> */}
+                    </div>
+                  </div>
                 )
               })}
           </div>

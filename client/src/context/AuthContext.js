@@ -3,27 +3,17 @@ import { createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWith
 import { useToggleModal } from './ModalContext';
 import { auth } from '../context/FirebaseConfig';
 
-const RegisterEmailContext = React.createContext();
-const RegisterPasswordContext = React.createContext();
-const LoginEmailContext = React.createContext();
-const LoginPasswordContext = React.createContext();
+const RegisterContext = React.createContext();
+const LoginContext = React.createContext();
 const AuthFunctionContext = React.createContext();
 const UserContext = React.createContext();
 
-export function useRegisterEmail() {
-  return useContext(RegisterEmailContext);
+export function useRegister() {
+  return useContext(RegisterContext);
 }
 
-export function useRegisterPassword() {
-  return useContext(RegisterPasswordContext);
-}
-
-export function useLoginEmail() {
-  return useContext(LoginEmailContext);
-}
-
-export function useLoginPassword() {
-  return useContext(LoginPasswordContext);
+export function useLogin() {
+  return useContext(LoginContext);
 }
 
 export function useAuthFunctions() {
@@ -97,15 +87,11 @@ export function AuthProvider({ children }) {
   return (
       <AuthFunctionContext.Provider value={{register, login, logout}}>
         <UserContext.Provider value={{user, setUser}}>
-          <RegisterEmailContext.Provider value={{registerEmail, setRegisterEmail}}>
-            <RegisterPasswordContext.Provider value={{registerPassword, setRegisterPassword}}>
-              <LoginEmailContext.Provider value={{loginEmail, setLoginEmail}}>
-                <LoginPasswordContext.Provider value={{loginPassword, setLoginPassword}}>
+          <RegisterContext.Provider value={{registerEmail, setRegisterEmail, registerPassword, setRegisterPassword}}>
+              <LoginContext.Provider value={{loginEmail, setLoginEmail, loginPassword, setLoginPassword}}>
                   { children }
-                </LoginPasswordContext.Provider>
-              </LoginEmailContext.Provider>
-            </RegisterPasswordContext.Provider>
-          </RegisterEmailContext.Provider>
+              </LoginContext.Provider>
+          </RegisterContext.Provider>
         </UserContext.Provider>
       </AuthFunctionContext.Provider> 
     )

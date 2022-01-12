@@ -8,6 +8,7 @@ import '../../scss/utility/colors.scss';
 
 function AudioSearch() {
 
+  //spotify search in audio context
   const { spotifySearch, setSpotifySearch, spotifySearchResults } = useSpotifySearch('');
 
   return (

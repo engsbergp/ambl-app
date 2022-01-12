@@ -8,7 +8,7 @@
   bottom:0;
   left:0;  
   width:100%;
-  padding:0 1rem;
+  // padding:0 1rem;
   background:$nav;
   align-items: center;
   box-shadow: 0 0 1rem #444 ;
@@ -44,7 +44,6 @@
     align-items: center;
     justify-content: left;
     width:30%;
-
   }
 
   &-controls{
@@ -92,10 +91,26 @@
     color:#bbb;
     transition:.2s;
     font-size: 1rem;
+    cursor:pointer;
+    font-size:.9rem;
   }
+
   &-button:hover{
     background:#444;
     color:$text-active;
+    }
+
+  &-button-active{
+    height:9vh;
+    width:25%;
+    background:transparent;
+    border:none;
+    transition:.2s;
+    font-size: 1rem;
+    background:#444;
+    color:$text-active;
+    cursor:pointer;
+    font-size:.9rem;
   }
 
   &-button-mobile{
@@ -110,6 +125,8 @@
     height:55vh;
     width:100%;
     transition:ease-in-out .6s;
+    background:#444;
+    padding-left: 1rem;
   }
   &-pages{
     display:flex;

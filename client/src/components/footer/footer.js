@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
+import { useFooterNav } from '../../context/UtilityContext';
 import FooterPlayer from './FooterPlayer';
 import FooterControls from './FooterControls';
 import FooterPlayhead from './FooterPlayhead';
@@ -14,6 +15,7 @@ const Footer = () => {
 
   const [isExpanded, setIsExpanded] = useState(false);
 
+  const { footerMenuActive, setFooterMenuActive } = useFooterNav();
 
   function expandFooter() {
     setIsExpanded(!isExpanded);
@@ -30,16 +32,28 @@ const Footer = () => {
 
         {/* navigation 60% width */}
         <div className={isExpanded ? 'footer-nav' : 'footer-nav hide'}>
-          <button className="footer-button">
+          <button
+            onClick={() => setFooterMenuActive('audio')} 
+            className={footerMenuActive === 'audio' ? "footer-button-active" : 'footer-button'}
+          >
             Audio
           </button>
-          <button className="footer-button">
+          <button 
+            onClick={() => setFooterMenuActive('video')} 
+            className={footerMenuActive === 'video' ? "footer-button-active" : 'footer-button'}
+          >
             Video
           </button>
-          <button className="footer-button">
+          <button 
+            onClick={() => setFooterMenuActive('recent')} 
+            className={footerMenuActive === 'recent' ? "footer-button-active" : 'footer-button'}
+          >
             Recent
           </button>
-          <button className="footer-button">
+          <button 
+            onClick={() => setFooterMenuActive('collection')} 
+            className={footerMenuActive === 'collection' ? "footer-button-active" : 'footer-button'}
+          >
             Collection
           </button>
           <button className="footer-button-mobile">

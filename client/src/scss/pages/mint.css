@@ -1,0 +1,76 @@
+.mint-player {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mint-iframe {
+  aspect-ratio: 16 / 9;
+  width: 80%;
+  max-width: 720px;
+  border: none;
+}
+
+.mint-settings {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.mint-options {
+  cursor: pointer;
+}
+
+.mint-back-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  top: 4rem;
+  left: 1rem;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 100vw;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.mint-waveform {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80%;
+  max-width: 720px;
+  height: 2rem;
+}
+
+.mint-controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80%;
+  max-width: 720px;
+  height: 3rem;
+}
+/*# sourceMappingURL=mint.css.map */

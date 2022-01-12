@@ -56,9 +56,9 @@ function Header() {
       <FaIcons.FaTree className="icon-md tree-icon" onClick={goAbout}/>
       <FaIcons.FaTree className="icon-md tree-mobile" onClick={expandNav}/>
         <NavLink exact className="navlink header-desktop" activeClassName="active" to={ROUTES.HOME}>Home</NavLink>
-        <NavLink className="navlink header-desktop" activeClassName="active" to={ROUTES.LISTEN}>Listen</NavLink>
-        <NavLink className="navlink header-desktop" activeClassName="active" to={ROUTES.CREATE}>Create</NavLink>
-        <NavLink className="navlink header-desktop" activeClassName="active" to={ROUTES.PLAY}>Play</NavLink>
+        <NavLink className="navlink header-desktop" activeClassName="active" to={ROUTES.EXPLORE}>Explore</NavLink>
+        <NavLink className="navlink header-desktop" activeClassName="active" to={ROUTES.MINT}>Mint</NavLink>
+        <NavLink className="navlink header-desktop" activeClassName="active" to={ROUTES.PLAY}>Curate</NavLink>
         <NavLink className="navlink header-desktop" activeClassName="active" to={ROUTES.SHARE}>Share</NavLink>
       <div className="header-buttons">
         

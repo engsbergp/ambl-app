@@ -23,6 +23,26 @@ $length: #949494;
   //CLASSES//
   ///////////
 
+.bg-white{
+  background: #ddd;
+}
+
+.bg-grey100{
+  background: #999;
+}
+.bg-grey200{
+  background: #888;
+}
+.bg-grey300{
+  background: #777;
+}
+.bg-grey400{
+  background: #666;
+}
+.bg-grey500{
+  background: #555;
+}
+
 .modal-primary{
   background:$modal-bg;
   color:$text;
@@ -31,7 +51,8 @@ $length: #949494;
 .btn-grey{
   background:$btn-bg;
   color:$text-active;
-  transition:.2s
+  transition:.2s;
+  font-size:.9rem;
 }
 
 .btn-grey:hover{
@@ -40,6 +61,7 @@ $length: #949494;
 
 .active{
   color:$text-active;
+  font-size:.9rem;
 }
 
 .select-white{
@@ -63,6 +85,7 @@ $length: #949494;
 
 .text-primary{
   color:$text;
+  font-size:.9rem;
 }
 
 .password-red{

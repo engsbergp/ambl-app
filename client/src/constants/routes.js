@@ -1,14 +1,14 @@
 // PAGES
 import Visualizer from '../pages/visualizer';
-import Listen from '../pages/listen';
-import Create from '../pages/create';
+import Explore from '../pages/explore';
+import Mint from '../pages/mint';
 import Play from '../pages/play';
 import Share from '../pages/share';
 import About from '../pages/about';
 export {
   Visualizer,
-  Listen,
-  Create,
+  Explore,
+  Mint,
   Play,
   Share,
   About,
@@ -16,8 +16,8 @@ export {
 
 // ROUTES
 export const HOME = "/";
-export const LISTEN = "/listen";
-export const CREATE = "/create";
+export const EXPLORE = "/explore";
+export const MINT = "/mint";
 export const PLAY = "/play";
 export const SHARE = "/share";
 export const ABOUT = "/about";

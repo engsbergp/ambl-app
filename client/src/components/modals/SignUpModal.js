@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ReactDom from 'react-dom';
-import { useRegisterEmail, useRegisterPassword, useLoginEmail, useLoginPassword, useAuthFunctions } from '../../context/AuthContext';
+import { useRegister, useLogin, useAuthFunctions } from '../../context/AuthContext';
 import { useToggleModal } from '../../context/ModalContext';
 import * as FaIcons from 'react-icons/fa';
 import "firebase/auth";
@@ -19,10 +19,8 @@ function SignUpModal() {
   const { toggleSignUpModal }= useToggleModal();
 
   //auth context states
-  const { registerEmail, setRegisterEmail } = useRegisterEmail();
-  const { registerPassword, setRegisterPassword } = useRegisterPassword();
-  const { loginEmail, setLoginEmail } = useLoginEmail();
-  const { loginPassword, setLoginPassword } = useLoginPassword();
+  const { registerEmail, setRegisterEmail, registerPassword, setRegisterPassword } = useRegister();
+  const { loginEmail, setLoginEmail, loginPassword, setLoginPassword  } = useLogin();
   const { register, login } = useAuthFunctions();
 
   return ReactDom.createPortal(

@@ -49,6 +49,7 @@ export function SpotifyProvider( {children} ) {
       }).then(res => {
         setAccessToken(res.data.accessToken);
         setExpiresIn(res.data.expiresIn);
+        console.log(res.data)
       }).catch(() => {
         // window.location = '/'
       })

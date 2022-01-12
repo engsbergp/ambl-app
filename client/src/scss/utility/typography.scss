@@ -3,11 +3,13 @@
 .navlink{
     text-decoration: none;
     color: $text;
+    font-size:.9rem;
     margin:0 1.5rem 0 1.5rem;
     transition:.2s;
   }
 .navlink:hover{
   color:$text-active;
+  font-size:.9rem;
 }
 
 .icon-md{
