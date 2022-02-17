@@ -1,6 +1,6 @@
 import React from 'react';
-import RecentAudioCard from './RecentAudioCard';
-import RelatedAudioCard from './RelatedAudioCard';
+import AudioRecents from './AudioRecents';
+import AudioRecommendedArtists from './AudioRecommendedArtists';
 import SpotifySearchResults from './SpotifySearchResults';
 import { useSpotifySearch } from '../../context/AudioContext';
 import '../../scss/utility/body.scss';
@@ -36,8 +36,8 @@ function AudioSearch() {
 
         :
         <>
-        <RecentAudioCard/>
-        <RelatedAudioCard/>        
+        <AudioRecents/>
+        <AudioRecommendedArtists/>        
         </>
       }
 

@@ -11,6 +11,27 @@ const SpotifyPlaylistContext = React.createContext();
 const SelectedPlaylistContext = React.createContext();
 const SpotifySearchContext = React.createContext();
 const SpotifyPlayerContext = React.createContext();
+const SpotifyRecommendedArtistsContext = React.createContext();
+const SpotifyRecommendedGenresContext = React.createContext();
+const SpotifyRecentlyPlayedContext = React.createContext();
+const SpotifyUserDataContext = React.createContext();
+
+
+export function useSpotifyUserData() {
+  return useContext(SpotifyUserDataContext);
+}
+
+export function useSpotifyRecentlyPlayed() {
+  return useContext(SpotifyRecentlyPlayedContext);
+}
+
+export function useSpotifyRecommendedGenres() {
+  return useContext(SpotifyRecommendedGenresContext);
+}
+
+export function useSpotifyRecommendedArtists() {
+  return useContext(SpotifyRecommendedArtistsContext);
+}
 
 export function useSpotifyPlayer() {
   return useContext(SpotifyPlayerContext);
@@ -28,7 +49,6 @@ export function useSpotifySearch() {
   return useContext(SpotifySearchContext)
 }
 
-
 export function AudioProvider({ children }) {
 
   const [ selectedPlaylist, setSelectedPlaylist ] = useState('');
@@ -38,6 +58,14 @@ export function AudioProvider({ children }) {
   const [ trackPlaying, setTrackPlaying ] = useState('');
   const [ spotifyPlaylists, setSpotifyPlaylists ] = useState([]);
   const [ userId, setUserId ] = useState('');
+  const [ userName, setUserName ] = useState('');
+  const [ recommendedArtist, setRecommendedArtist] = useState('');
+  const [ recommendedArtists, setRecommendedArtists ] = useState([]);
+  const [ recentlyPlayed, setRecentlyPlayed ] = useState([]);
+  const [ featuredPlaylists, setFeaturedPlaylists ] = useState([]);
+  // const [ recommendedGenres, setRecommendedGenres ] = useState([]);
+  // const [ selectedArtist, setSelectedArtist ] = useState('');
+  // const [ selectedAlbum, setSelectedAlbum ] = useState('');
 
   const { accessToken } = useSpotifyTokens();
 
@@ -48,15 +76,15 @@ export function AudioProvider({ children }) {
   }, [accessToken])
 
 
-
-  // Get active user data
+  // GET ACTIVE USER DATA
   useEffect(() => {
     if (!accessToken) return;
 
     (async () => {
       const userData = await spotifyApi.getMe();
-      // console.log(userData.body.id); 
+      // console.log(userData); 
       setUserId(userData.body.id); 
+      setUserName(userData.body.display_name);
     })().catch(e => {
       console.error(e);
     }) 
@@ -64,8 +92,8 @@ export function AudioProvider({ children }) {
 
 
 
-  //search for tracks, artists, playlists
-    useEffect(() => {
+  //SEARCH FOR TRACKS, ARTISTS, PLAYLISTS
+  useEffect(() => {
       //display nothing in search if no search, or no access token
       if (!spotifySearch) return setSpotifySearchResults([]);
       if (!accessToken) return;
@@ -102,8 +130,7 @@ export function AudioProvider({ children }) {
   }, [spotifySearch, accessToken])
 
 
-
-  // Get a user's playlists
+  // GET USERS PLAYLISTS
     useEffect(() => {
       if (!accessToken) return;
       (async () => {
@@ -117,14 +144,15 @@ export function AudioProvider({ children }) {
       })().catch(e => {
         console.error(e);
       }) 
-    }, [userId])
+    }, [accessToken, userId])
 
 
-  //return tracks from selected playlist
+  //RETURN TRACKS FROM SELECTED PLAYLIST
   useEffect(() => {
     if (!accessToken) return;
       axios.get(`https://api.spotify.com/v1/playlists/${selectedPlaylist}/tracks`, {
-        headers: { 'Authorization' : 'Bearer ' + accessToken }
+        headers: { 'Authorization' : 'Bearer ' + accessToken,
+                    'Content-Type': 'application/json' }
       }).then(res => {
         setSelectedPlaylistTracks(res.data.items)
         // console.log(selectedPlaylistTracks)
@@ -134,82 +162,115 @@ export function AudioProvider({ children }) {
   }, [selectedPlaylist])
 
 
-
+  //GET RECENTLY PLAYED
   useEffect(() => {
     if (!accessToken) return;
       axios.get('https://api.spotify.com/v1/me/player/recently-played', {
         headers: { 'Authorization' : 'Bearer ' + accessToken }
       }).then(res => {
-        // setSelectedPlaylistTracks(res.data.items)
+        setRecentlyPlayed(res.data.items)
+        setRecommendedArtist(res.data.items[0].track.artists[0].id)
+        console.log(recommendedArtist)
+        // console.log(res)
+      }).catch(e => {
+        console.error(e);
+      }) 
+  }, [userId])
+
+
+  //GET RECOMMENDED ARTISTS
+  //based off first artist in the user's recently played
+  useEffect(() => {
+    if (!accessToken) return;
+      axios.get(`https://api.spotify.com/v1/artists/${recommendedArtist}/related-artists`, {
+        headers: { 'Authorization' : 'Bearer ' + accessToken }
+      }).then(res => {
+        // setRecommendedArtists(res.data.artists)
         console.log(res)
       }).catch(e => {
         console.error(e);
       }) 
-  }, [accessToken])
+  }, [userId])
 
 
+  //GET FEATURED PLAYLISTS
+  useEffect(() => {
+    if (!accessToken) return;
+      axios.get('https://api.spotify.com/v1/browse/featured-playlists', {
+        headers: { 'Authorization' : 'Bearer ' + accessToken }
+      }).then(res => {
+        setFeaturedPlaylists(res.data.playlists.items)
+        // console.log(res)
+      }).catch(e => {
+        console.error(e);
+      }) 
+  }, [userId])
+
+
+  //GET RECOMMENDED GENRES
+  useEffect(() => {
+    if (!accessToken) return;
+      axios.get('https://api.spotify.com/v1/recommendations/available-genre-seeds', {
+        headers: { 'Authorization' : 'Bearer ' + accessToken }
+      }).then(res => {
+        // setRecentlyPlayed(res.data.items)
+        // console.log(res)
+      }).catch(e => {
+        console.error(e);
+      }) 
+  }, [userId])
+
+
+  //GO TO ARTISTS PAGE
+    //selected artist
   
+  //GO TO ALBUM PAGE
+    //selected album
 
-
-    //get recently played artists
-    // useEffect(() => {
-    //   (async () => {
-    //     const recentArtists = await spotifyApi.getMyRecentlyPlayedTracks({ limit : 5 });
-    //     // Output items
-    //     console.log("Your 20 most recently played tracks are:");
-    //     recentArtists.body.items.forEach(item => console.log(item.track));
-    //   })().catch(e => {
-    //     console.error(e);
-    //   })
-    // }, [accessToken])
-
-
-  // Get a List of Categories
-  // spotifyApi.getCategories({
-  //   limit : 5,
-  //   offset: 0,
-  //   country: 'SE',
-  //   locale: 'sv_SE'
-  // })
-  // .then(function(data) {
-  // console.log(data.body);
-  // }, function(err) {
-  // console.log("Something went wrong!", err);
-  // });
-
-
-  // Start/Resume a User's Playback 
-  // spotifyApi.play()
-  //   .then(function() {
-  //     console.log('Playback started');
-  //   }, function(err) {
-  //     console.log('Something went wrong!', err);
-  //   });
 
 
 
   return(
-    <SpotifyPlayerContext.Provider 
-      value={{ 
-        trackPlaying, setTrackPlaying 
-    }}>
-      <SpotifySearchContext.Provider 
+    <SpotifyUserDataContext.Provider
+    value={{ userName, userId }}>
+      <SpotifyPlayerContext.Provider 
         value={{ 
-          spotifySearch, setSpotifySearch, 
-          spotifySearchResults 
+          trackPlaying, setTrackPlaying 
       }}>
-        <SpotifyPlaylistContext.Provider 
-          value={{ spotifyPlaylists 
+        <SpotifySearchContext.Provider 
+          value={{ 
+            spotifySearch, setSpotifySearch, 
+            spotifySearchResults 
         }}>
-          <SelectedPlaylistContext.Provider 
-            value={{ 
-              selectedPlaylist, setSelectedPlaylist,
-              selectedPlaylistTracks, setSelectedPlaylistTracks 
+          <SpotifyPlaylistContext.Provider 
+            value={{ spotifyPlaylists,
+                    featuredPlaylists 
           }}>
-            { children }
-          </SelectedPlaylistContext.Provider>
-        </SpotifyPlaylistContext.Provider>
-      </SpotifySearchContext.Provider>
-    </SpotifyPlayerContext.Provider>
+            <SelectedPlaylistContext.Provider 
+              value={{ 
+                selectedPlaylist, setSelectedPlaylist,
+                selectedPlaylistTracks, setSelectedPlaylistTracks 
+            }}>
+              <SpotifyRecommendedArtistsContext.Provider
+                value={{recommendedArtists, setRecommendedArtists,
+                        recommendedArtist, setRecommendedArtist
+              }}>
+                {/* <SpotifyRecommendedGenresContext.Provider 
+                  value={{recommendedGenres, setRecommendedGenres
+                }}> */}
+                  <SpotifyRecentlyPlayedContext.Provider
+                    value={{recentlyPlayed, setRecentlyPlayed
+                  }}>
+
+                    { children }
+
+                  </SpotifyRecentlyPlayedContext.Provider>
+                {/* </SpotifyRecommendedGenresContext.Provider> */}
+              </SpotifyRecommendedArtistsContext.Provider> 
+            </SelectedPlaylistContext.Provider>
+          </SpotifyPlaylistContext.Provider>
+        </SpotifySearchContext.Provider>
+      </SpotifyPlayerContext.Provider>
+    </SpotifyUserDataContext.Provider>
   )
 };

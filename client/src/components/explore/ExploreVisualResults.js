@@ -1,9 +1,10 @@
 import React from 'react';
+
 import '../../scss/utility/body.scss';
 
-function ExploreResults() {
+function ExploreVisualResults() {
   return (
-    <div className="col70 p1">
+    <div className="col100 p1">
       <div className="card-container overflow-y">
         <div className="card-md">
           card
@@ -64,4 +65,4 @@ function ExploreResults() {
   )
 }
 
-export default ExploreResults
+export default ExploreVisualResults

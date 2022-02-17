@@ -2,11 +2,11 @@ import React from 'react';
 import '../../scss/utility/body.scss';
 import '../../scss/utility/colors.scss';
 
-function ExploreSearch() {
+function ExploreVisualSearch() {
   return (
-    <div className="col30">
+    <div className="col100">
       <input 
-        placeholder="Search NFT artists, playlists, titles" 
+        placeholder="Search Visuals" 
         type="text" 
         className="searchbar select-white ml1 mb1"
         // onChange={e => setExploreSearchResults(e.target.value)}
@@ -14,21 +14,21 @@ function ExploreSearch() {
       <div className="overflow-y">
 
         <div className="spacer-grey">
-          <h2> GENRES </h2>
+          <h2> VISUAL GENRES </h2>
 
         </div>
 
         <div className="spacer-white">
-          <h2> COLLECTIONS </h2>
+          <h2> VISUAL PLAYLISTS </h2>
 
         </div>
         <div className="spacer-grey">
-          <h2> ARTISTS </h2>
+          <h2> VISUAL ARTISTS </h2>
 
         </div>
 
         <div className="spacer-white">
-          <h2> MOODS </h2>
+          <h2> VISUAL MOODS </h2>
 
         </div>
       </div>
@@ -36,4 +36,4 @@ function ExploreSearch() {
   )
 }
 
-export default ExploreSearch
+export default ExploreVisualSearch

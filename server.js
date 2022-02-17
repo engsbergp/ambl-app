@@ -19,9 +19,10 @@ app.post('/login', (req, res) => {
   const code = req.body.code
   console.log(code);
   const spotifyApi = new SpotifyWebApi({
-    redirectUri: 'https://ambl.io',
-    clientId: process.env.REACT_APP_SPOTIFY_CLIENT_ID,
-    clientSecret: process.env.REACT_APP_SPOTIFY_CLIENT_SECRET,
+    // redirectUri: 'https://ambl.io',
+    redirectUri: 'http://localhost:3000',
+    clientId: process.env.DEV_REACT_APP_SPOTIFY_CLIENT_ID,
+    clientSecret: process.env.DEV_REACT_APP_SPOTIFY_CLIENT_SECRET,
   })
 
   spotifyApi
@@ -48,9 +49,10 @@ app.post('/refresh', (req, res) => {
   //set port and retrieve the refresh token with the ID and secret
   const refreshToken = req.body.refreshToken;
   const spotifyApi = new SpotifyWebApi({
-    redirectUri: 'https://ambl.io',
-    clientId: process.env.REACT_APP_SPOTIFY_CLIENT_ID,
-    clientSecret: process.env.REACT_APP_SPOTIFY_CLIENT_SECRET,
+    // redirectUri: 'https://ambl.io',
+    redirectUri: 'http://localhost:3000',
+    clientId: process.env.DEV_REACT_APP_SPOTIFY_CLIENT_ID,
+    clientSecret: process.env.DEV_REACT_APP_SPOTIFY_CLIENT_SECRET,
     refreshToken
   })
 

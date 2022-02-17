@@ -3,6 +3,7 @@ import {  useHistory, NavLink } from 'react-router-dom';
 import { useUserInfo } from '../../context/AuthContext';
 import { useSpotifyTokens } from '../../context/SpotifyContext';
 import ConnectSpotify from './ConnectSpotify';
+import SpotifyConnected from './SpotifyConnected';
 import * as ROUTES from '../../constants/routes'
 import HeaderExpanded from './HeaderExpanded';
 import ThemePicker from './ThemePicker';
@@ -93,9 +94,7 @@ function Header() {
         {/* toggle spotify connect button */}
         {
          accessToken ? 
-          <button className="btn-circle-sm btn-grey">
-            <p>spotify connected!</p>
-          </button>
+          <SpotifyConnected/>
           : 
           <ConnectSpotify />
          }
