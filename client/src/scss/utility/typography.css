@@ -1,3 +1,27 @@
+.bg-white {
+  background: #ddd;
+}
+
+.bg-grey100 {
+  background: #999;
+}
+
+.bg-grey200 {
+  background: #888;
+}
+
+.bg-grey300 {
+  background: #777;
+}
+
+.bg-grey400 {
+  background: #666;
+}
+
+.bg-grey500 {
+  background: #555;
+}
+
 .modal-primary {
   background: #777;
   color: #bbb;
@@ -8,6 +32,7 @@
   color: #eee;
   -webkit-transition: .2s;
   transition: .2s;
+  font-size: .9rem;
 }
 
 .btn-grey:hover {
@@ -16,6 +41,7 @@
 
 .active {
   color: #eee;
+  font-size: .9rem;
 }
 
 .select-white {
@@ -30,6 +56,8 @@
 .btn-transparent {
   background: transparent;
   color: #bbb;
+  -webkit-transition: .2s;
+  transition: .2s;
 }
 
 .btn-transparent:hover {
@@ -38,11 +66,13 @@
 
 .text-primary {
   color: #bbb;
+  font-size: .9rem;
 }
 
 .navlink {
   text-decoration: none;
   color: #bbb;
+  font-size: .9rem;
   margin: 0 1.5rem 0 1.5rem;
   -webkit-transition: .2s;
   transition: .2s;
@@ -50,10 +80,28 @@
 
 .navlink:hover {
   color: #eee;
+  font-size: .9rem;
 }
 
 .icon-md {
   color: #bbb;
   font-size: 2rem;
+}
+
+.icon-lg {
+  color: #bbb;
+  font-size: 3rem;
+}
+
+.text-sm {
+  font-size: .75rem;
+}
+
+.text-md {
+  font-size: 1rem;
+}
+
+.text-lg {
+  font-size: 1.3rem;
 }
 /*# sourceMappingURL=typography.css.map */

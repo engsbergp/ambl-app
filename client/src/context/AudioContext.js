@@ -15,7 +15,12 @@ const SpotifyRecommendedArtistsContext = React.createContext();
 const SpotifyRecommendedGenresContext = React.createContext();
 const SpotifyRecentlyPlayedContext = React.createContext();
 const SpotifyUserDataContext = React.createContext();
+const SpotifyFunctionContext = React.createContext();
 
+
+export function useSpotifyFunctions() {
+  return useContext(SpotifyFunctionContext);
+}
 
 export function useSpotifyUserData() {
   return useContext(SpotifyUserDataContext);
@@ -51,11 +56,9 @@ export function useSpotifySearch() {
 
 export function AudioProvider({ children }) {
 
+  //USER PROFILE
   const [ selectedPlaylist, setSelectedPlaylist ] = useState('');
   const [ selectedPlaylistTracks, setSelectedPlaylistTracks ] = useState([]);
-  const [ spotifySearch, setSpotifySearch ] = useState('');
-  const [ spotifySearchResults, setSpotifySearchResults ] = useState([]);
-  const [ trackPlaying, setTrackPlaying ] = useState('');
   const [ spotifyPlaylists, setSpotifyPlaylists ] = useState([]);
   const [ userId, setUserId ] = useState('');
   const [ userName, setUserName ] = useState('');
@@ -63,9 +66,20 @@ export function AudioProvider({ children }) {
   const [ recommendedArtists, setRecommendedArtists ] = useState([]);
   const [ recentlyPlayed, setRecentlyPlayed ] = useState([]);
   const [ featuredPlaylists, setFeaturedPlaylists ] = useState([]);
+
+  //SEAERCH
+  const [ spotifySearchResults, setSpotifySearchResults ] = useState([]);
+  const [ spotifySearch, setSpotifySearch ] = useState('');
+  
+  //PLAYER
+  const [ trackPlaying, setTrackPlaying ] = useState('');
+
+  // FUNCTIONS
+  const [ selectedTrackId, setSelectedTrackId ] = useState('');
+  // const [ selectedArtistId, setSelectedArtistId ] = useState('');
+  // const [ selectedAlbumId, setSelectedAlbumId ] = useState('');
+  // const [ selectedPlaylistId, setSelectedPlaylistId ] = useState('');
   // const [ recommendedGenres, setRecommendedGenres ] = useState([]);
-  // const [ selectedArtist, setSelectedArtist ] = useState('');
-  // const [ selectedAlbum, setSelectedAlbum ] = useState('');
 
   const { accessToken } = useSpotifyTokens();
 
@@ -89,7 +103,6 @@ export function AudioProvider({ children }) {
       console.error(e);
     }) 
   }, [accessToken])
-
 
 
   //SEARCH FOR TRACKS, ARTISTS, PLAYLISTS
@@ -141,10 +154,11 @@ export function AudioProvider({ children }) {
         // sent to audio queue, where a selected playlist is determined
         // selected playlist is mapped again to display tracks, artist, and images
         setSpotifyPlaylists(playlists.body.items);
+        // console.log(res)
       })().catch(e => {
         console.error(e);
       }) 
-    }, [accessToken, userId])
+    }, [userId])
 
 
   //RETURN TRACKS FROM SELECTED PLAYLIST
@@ -170,7 +184,7 @@ export function AudioProvider({ children }) {
       }).then(res => {
         setRecentlyPlayed(res.data.items)
         setRecommendedArtist(res.data.items[0].track.artists[0].id)
-        console.log(recommendedArtist)
+        // console.log(recommendedArtist)
         // console.log(res)
       }).catch(e => {
         console.error(e);
@@ -190,7 +204,7 @@ export function AudioProvider({ children }) {
       }).catch(e => {
         console.error(e);
       }) 
-  }, [userId])
+  }, [recommendedArtist])
 
 
   //GET FEATURED PLAYLISTS
@@ -232,7 +246,8 @@ export function AudioProvider({ children }) {
 
   return(
     <SpotifyUserDataContext.Provider
-    value={{ userName, userId }}>
+      value={{ userName, userId 
+    }}>
       <SpotifyPlayerContext.Provider 
         value={{ 
           trackPlaying, setTrackPlaying 
@@ -262,8 +277,13 @@ export function AudioProvider({ children }) {
                     value={{recentlyPlayed, setRecentlyPlayed
                   }}>
 
+                    {/* <SpotifyFunctionContext.Provider
+                      value={{ getSelectedTrackId 
+                    }}> */}
+
                     { children }
 
+                    {/* </SpotifyFunctionContext.Provider> */}
                   </SpotifyRecentlyPlayedContext.Provider>
                 {/* </SpotifyRecommendedGenresContext.Provider> */}
               </SpotifyRecommendedArtistsContext.Provider> 

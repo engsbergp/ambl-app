@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../scss/utility/body.scss';
-import '../../scss/utility/colors.scss';
+import '../../scss/colors/colors.scss';
 
 function ExploreVisualSearch() {
   return (

@@ -1,5 +1,5 @@
 @import '../utility/body.scss';
-@import '../utility/colors.scss';
+@import '../colors/colors.scss';
 
 .footer{
   display:flex;
@@ -122,12 +122,13 @@
     flex-direction: row;
     overflow:hidden;
     opacity:1;
-    height:55vh;
+    // height:55vh;
     width:100%;
     transition:ease-in-out .6s;
     background:#444;
     padding-left: 1rem;
   }
+
   &-pages{
     display:flex;
     flex-direction: row;

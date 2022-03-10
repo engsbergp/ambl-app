@@ -2,10 +2,15 @@ import React from 'react';
 import { useFooterNav } from '../../context/UtilityContext';
 import AudioQueue from '../audio/AudioQueue';
 import AudioSearch from '../audio/AudioSearch';
+import '../../scss/components/footer.scss';
+import '../../scss/components/footer-mobile.scss';
+import '../../scss/utility/actions.scss';
+import '../../scss/utility/body.scss';
 
-function FooterPlayer(props) {  
+function FooterPlayer() {  
 
   const { footerMenuActive } = useFooterNav();
+
   return (
     <>
       {/* FOOTER AUDIO */}

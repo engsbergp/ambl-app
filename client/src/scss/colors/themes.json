@@ -1,0 +1,59 @@
+{
+  "themes": 
+    [
+      {
+        "name": "greystyle",
+        "creator": "phil",
+        "styles": {
+          "name":"greystyle",
+          "bg":"#444",
+          "bg2":"#555",
+          "btn":"#777",
+          "btn-hover":"#656565",
+          "text-light":"#bbb",
+          "text-light-active":"#eee",
+          "text-dark":"#252525",
+          "text-dark-active":"#151515",
+          "scrollbar":"#888",
+          "scrollbar-hover":"#aaa",
+          "card":"#393939"
+        }
+      },
+      {
+        "name": "light-mode",
+        "creator": "phil",
+        "styles": {
+          "name": "light mode",
+          "bg":"#E1E5F2",
+          "bg2":"#555",
+          "btn":"#BFDBF7",
+          "btn-hover":"#8EAECE",
+          "text-light":"#fff",
+          "text-light-active":"#aaa",
+          "text-dark":"#011118",
+          "text-dark-active":"#02202A",
+          "scrollbar":"#CED1DD",
+          "scrollbar-hover":"#DEDFE2",
+          "card":"#C6E3FF"
+        }
+      },
+      {
+        "name": "dark-mode",
+        "creator": "phil",
+        "styles":{
+          "name": "dark mode",
+          "bg":"#1B264F",
+          "bg2":"#274690",
+          "btn":"#576CA8",
+          "btn-hover":"#485987",
+          "text-light":"#F5F3F5",
+          "text-light-active":"#fff",
+          "text-dark":"141210",
+          "text-dark-active":"#302B27",
+          "scrollbar":"#F9F9F9",
+          "scrollbar-hover":"#F5F3F5",
+          "card":"#111831"
+        }
+      }
+	]
+}

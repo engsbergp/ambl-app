@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {  useHistory, NavLink } from 'react-router-dom';
 import { useUserInfo } from '../../context/AuthContext';
 import { useSpotifyTokens } from '../../context/SpotifyContext';
+import { useThemeStyles } from '../../context/ThemeContext'
 import ConnectSpotify from './ConnectSpotify';
 import SpotifyConnected from './SpotifyConnected';
 import * as ROUTES from '../../constants/routes'
@@ -10,11 +11,8 @@ import ThemePicker from './ThemePicker';
 import SignUpModal from '../modals/SignUpModal';
 import UserModal from '../modals/UserModal';
 import * as FaIcons from 'react-icons/fa';
-import '../../scss/components/header.scss';
-import '../../scss/components/header-mobile.scss';
-import '../../scss/utility/body.scss';
-import '../../scss/utility/typography.scss';
 import { useActiveModal, useToggleModal } from '../../context/ModalContext';
+import '../../scss/components/header.scss'
 
 
 function Header() {
@@ -34,6 +32,10 @@ function Header() {
 
   //spotify states
   const { accessToken } = useSpotifyTokens();
+
+  //theme states
+  const { themeName } = useThemeStyles();
+
 
   function connectWallet() {
     setWalletConnected(!walletConnected)
@@ -59,7 +61,7 @@ function Header() {
         <NavLink exact className="navlink header-desktop" activeClassName="active" to={ROUTES.HOME}>Home</NavLink>
         <NavLink className="navlink header-desktop" activeClassName="active" to={ROUTES.EXPLORE}>Explore</NavLink>
         <NavLink className="navlink header-desktop" activeClassName="active" to={ROUTES.MINT}>Mint</NavLink>
-        <NavLink className="navlink header-desktop" activeClassName="active" to={ROUTES.PLAY}>Curate</NavLink>
+        <NavLink className="navlink header-desktop" activeClassName="active" to={ROUTES.PLAY}>Play</NavLink>
         <NavLink className="navlink header-desktop" activeClassName="active" to={ROUTES.SHARE}>Share</NavLink>
       <div className="header-buttons">
         
@@ -98,19 +100,18 @@ function Header() {
           : 
           <ConnectSpotify />
          }
-
-        <button onClick={chooseTheme} className="btn-circle-sm btn-grey">
-          100 AMBL
-        </button>
+        <div onClick={ chooseTheme } className="btn-circle-sm btn-grey">
+            { themeName }
+        </div>
       </div>
       
       {/* light mode, dark mode, greystyle */}
-      <div className={themeExpanded ? "header-themes show" : "header-themes"}>
+      <div className={themeExpanded ? "header-themes show" : "header-themes remove"}>
         <ThemePicker/>
       </div>
 
       {/* mobile menu, less than 560 px */}
-      <div className={headerExpanded ? "header-mobile show" : "header-mobile"}>
+      <div className={headerExpanded ? "header-mobile show" : "header-mobile remove"}>
         <HeaderExpanded/>
       </div>
     </div>

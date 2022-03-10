@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSpotifyPlaylists, useSelectedPlaylist } from '../../context/AudioContext';
 import '../../scss/utility/body.scss';
-import '../../scss/utility/colors.scss';
+import '../../scss/colors/colors.scss';
 
 function AudioQueue() {
 

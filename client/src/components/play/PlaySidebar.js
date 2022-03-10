@@ -1,8 +1,12 @@
 import React from 'react'
+import { useActiveTheme, useThemeStyles } from '../../context/ThemeContext';
 
 function PlaySidebar() {
+
+  const { bg1, setBg1 } = useThemeStyles();
+
   return (
-    <div className="play-sidebar">
+    <div style={{ background:bg1 }} className="play-sidebar">
       <div className="play-collection">
         <p>NFT collection</p>
       </div>

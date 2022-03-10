@@ -4,7 +4,7 @@ import AudioRecommendedArtists from './AudioRecommendedArtists';
 import SpotifySearchResults from './SpotifySearchResults';
 import { useSpotifySearch } from '../../context/AudioContext';
 import '../../scss/utility/body.scss';
-import '../../scss/utility/colors.scss';
+import '../../scss/colors/colors.scss';
 
 function AudioSearch() {
 

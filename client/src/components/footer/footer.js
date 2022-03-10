@@ -21,8 +21,6 @@ const Footer = () => {
     setIsExpanded(!isExpanded);
   }
 
-
-
   return (
     <div className='footer'>
       <FooterPlayhead/>
@@ -83,7 +81,9 @@ const Footer = () => {
       </div>
 
       {/* footer menu contents */}
+
       <div className={isExpanded ? 'footer-player' : 'footer-player hide'}>
+      {/* <div className="footer-player hide"> */}
         <FooterPlayer/>
       </div>
     </div>

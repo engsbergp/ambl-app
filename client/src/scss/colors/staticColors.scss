@@ -1,0 +1,17 @@
+$shadow: #444;
+$search: #eee;
+$warning: hsl(0 50% 50%);
+$success: hsl(130 40% 50%);
+$transparent: transparent;
+
+
+
+.password-red{
+  outline:2px solid $warning;
+  border: none;
+}
+
+.password-green{
+  outline:2px solid $success; 
+  border: none;
+}

@@ -6,7 +6,7 @@ import * as FaIcons from 'react-icons/fa';
 import "firebase/auth";
 import '../../scss/components/modals.scss';
 import '../../scss/utility/body.scss';
-import '../../scss/utility/colors.scss';
+import '../../scss/colors/colors.scss';
 
 
 function SignUpModal() {

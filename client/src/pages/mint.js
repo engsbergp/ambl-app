@@ -3,7 +3,7 @@ import MintPlayer from '../components/mint/MintPlayer';
 import MintSettings from '../components/mint/MintSettings';
 import { useMintFunctions } from '../context/MintContext';
 import MintOptions from '../components/mint/MintOptions';
-import '../scss/utility/colors.scss';
+import '../scss/colors/colors.scss';
 import '../scss/utility/body.scss';
 import '../scss/pages/mint.scss';
 

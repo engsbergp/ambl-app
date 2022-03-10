@@ -1,3 +1,27 @@
+.bg-white {
+  background: #ddd;
+}
+
+.bg-grey100 {
+  background: #999;
+}
+
+.bg-grey200 {
+  background: #888;
+}
+
+.bg-grey300 {
+  background: #777;
+}
+
+.bg-grey400 {
+  background: #666;
+}
+
+.bg-grey500 {
+  background: #555;
+}
+
 .modal-primary {
   background: #777;
   color: #bbb;
@@ -8,6 +32,7 @@
   color: #eee;
   -webkit-transition: .2s;
   transition: .2s;
+  font-size: .9rem;
 }
 
 .btn-grey:hover {
@@ -16,6 +41,7 @@
 
 .active {
   color: #eee;
+  font-size: .9rem;
 }
 
 .select-white {
@@ -30,6 +56,8 @@
 .btn-transparent {
   background: transparent;
   color: #bbb;
+  -webkit-transition: .2s;
+  transition: .2s;
 }
 
 .btn-transparent:hover {
@@ -38,13 +66,6 @@
 
 .text-primary {
   color: #bbb;
-}
-
-.button-link {
-  color: #bbb;
-}
-
-.button-link:hover {
-  color: #eee;
+  font-size: .9rem;
 }
 /*# sourceMappingURL=colors.css.map */

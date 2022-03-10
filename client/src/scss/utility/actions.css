@@ -8,4 +8,10 @@
   height: 0;
   opacity: 0;
 }
+
+.ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
 /*# sourceMappingURL=actions.css.map */

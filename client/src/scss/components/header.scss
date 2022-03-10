@@ -1,4 +1,4 @@
-@import '../utility/colors.scss';
+@import '../colors/colors.scss';
 @import '../utility/body.scss';
 
 .header{
@@ -30,8 +30,8 @@
     position: absolute;
     top: 2.75rem;
     right:0;
-    height:0;
-    opacity:0;
+    height:3rem;
+    opacity:1;
     width:9rem;
     background:rgba(200,200,200,.5);
     transition: .5s;
@@ -44,9 +44,9 @@
     flex-direction: row;
   }
 
-  &-themes.show{
-    height:3rem;
-    opacity: 1;
+  &-themes.remove{
+    height:0rem;
+    opacity: 0;
   }
   &-theme{
     display: flex;

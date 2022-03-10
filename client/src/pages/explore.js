@@ -4,8 +4,6 @@ import ExploreAudioResults from '../components/explore/ExploreAudioResults';
 import ExploreVisualSearch from '../components/explore/ExploreVisualSearch';
 import ExploreVisualResults from '../components/explore/ExploreVisualResults';
 import '../scss/pages/explore.scss';
-import '../scss/utility/body.scss';
-import '../scss/utility/colors.scss';
 
 function Explore() {
 

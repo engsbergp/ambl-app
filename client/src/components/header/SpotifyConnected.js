@@ -1,7 +1,6 @@
 import React from 'react'
 import { useSpotifyUserData } from '../../context/AudioContext';
 import * as FaIcons from 'react-icons/fa';
-import '../../scss/utility/body.scss'
 
 export default function SpotifyConnected() {
 
