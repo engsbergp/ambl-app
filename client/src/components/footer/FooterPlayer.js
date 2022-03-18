@@ -4,12 +4,13 @@ import AudioQueue from '../audio/AudioQueue';
 import AudioSearch from '../audio/AudioSearch';
 import '../../scss/components/footer.scss';
 import '../../scss/components/footer-mobile.scss';
-import '../../scss/utility/actions.scss';
-import '../../scss/utility/body.scss';
+import { useThemeStyles } from '../../context/ThemeContext';
 
 function FooterPlayer() {  
 
   const { footerMenuActive } = useFooterNav();
+
+  const { bg1, bg2, text1, text2, text1Active, btn } = useThemeStyles();
 
   return (
     <>

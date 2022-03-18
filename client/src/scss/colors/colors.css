@@ -44,6 +44,10 @@
   font-size: .9rem;
 }
 
+.disabled {
+  color: #444;
+}
+
 .select-white {
   background: #ddd;
   color: #252525;

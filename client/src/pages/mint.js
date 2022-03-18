@@ -1,27 +1,17 @@
 import React from 'react'
 import MintPlayer from '../components/mint/MintPlayer';
 import MintSettings from '../components/mint/MintSettings';
-import { useMintFunctions } from '../context/MintContext';
-import MintOptions from '../components/mint/MintOptions';
-import '../scss/colors/colors.scss';
-import '../scss/utility/body.scss';
+import { useThemeStyles } from '../context/ThemeContext'
 import '../scss/pages/mint.scss';
 
 function Mint() {
-  const { nftSimpleAdvanced } = useMintFunctions();
+
+  const { bg1, text1 } = useThemeStyles();
 
   return (
-    <div className="page flex-row">
-
-      { 
-        nftSimpleAdvanced === 'simple' ?
-        <>
+    <div className="page flex-row" style={{background:bg1, color:text1}}>
         <MintPlayer/>
         <MintSettings/>
-        </>
-        :
-        <MintOptions/>
-      }      
     </div>
   )
 }

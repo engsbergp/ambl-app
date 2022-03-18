@@ -1,54 +1,35 @@
-import React, {useState} from 'react'
-import * as FaIcons from 'react-icons/fa';
-import '../../scss/utility/typography.scss';
-import '../../scss/utility/body.scss';
-
+import React, { useState, useEffect } from 'react'
+import SpotifyPlayer from 'react-spotify-web-playback'
+import { useThemeStyles } from '../../context/ThemeContext';
+import { useSpotifyTokens } from '../../context/SpotifyContext'
+import { useSpotifyPlayer } from '../../context/AudioContext'
 
 function FooterControls() {
 
-  const [isPlaying, setIsPlaying] = useState(false);
+  const { trackUri } = useSpotifyPlayer();
+  const { accessToken } = useSpotifyTokens();
 
-  function pauseMusic() {
-    setIsPlaying(!isPlaying);
-  }
+  const { bg1, text1 } = useThemeStyles();
 
-  function playMusic() {
-    setIsPlaying(!isPlaying);
-  }
+  const [play, setPlay] = useState();
 
+  useEffect(() => setPlay(true), [trackUri])
+
+  if (!trackUri) return null;
   return (
-    <div className='footer-playback gap1'>
-        <div className="footer-controls">
-          <FaIcons.FaAngleLeft className="icon-md"/>
-          {
-            isPlaying ? 
-              <button 
-                onClick={pauseMusic} 
-                className="btn-icon-circle btn-grey"
-              >
-                <FaIcons.FaPause/>
-              </button>
-             :
-              <button 
-                onClick={playMusic} 
-                className="btn-icon-circle btn-grey"
-              >
-                <FaIcons.FaPlay/>
-              </button>
-          }
-          <FaIcons.FaAngleRight className="icon-md"/>
-        </div>
-        <div className="footer-info gap1">
-          <div className="footer-artwork"></div>
-          <div className='footer-metadata'>
-            <p>0:00 / 0:00</p>
-            <p>artist - track</p>
-          </div>
-          <div className="footer-metadata-mobile">
-            <p>artist</p>
-            <p>song</p>
-          </div>  
-        </div>
+    <div className='col30 gap1'>
+
+      <SpotifyPlayer 
+        token={ accessToken }
+        showSaveIcon
+        callback={state => {
+          if (!state.isPlaying) setPlay(false);
+        }}
+        play={play}
+        uris={ trackUri ? [trackUri] : [] }
+        styles={{ bgColor:bg1, color:text1, trackNameColor:text1, trackArtistColor:text1 }}
+      />
+
     </div>
   )
 }

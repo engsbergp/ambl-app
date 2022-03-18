@@ -41,6 +41,7 @@
   border-radius:.75rem;
   border:none;
   cursor:pointer;
+  max-width: height;
  }
 
  .btn-round-md{
@@ -356,8 +357,9 @@
 }
 
 .input{
+
   &-title{
-    width:80%;
+    width:70%;
     height:2rem;
     border:none;
     outline:none;
@@ -371,8 +373,24 @@
     outline:none;
   }
 
+  &-quantity{
+    width:10%;
+    height:2rem;
+    border:none;
+    outline:none;
+    padding-left:.5rem;
+    border-radius: 5px;
+    background:#eee;
+  }
+  &-quantity:focus,
+  &-quantity:active{
+    border:none;
+    outline:none;
+  }
+
+
   &-attribute{
-    width:50%;
+    width:30%;
     height:2rem;
     border:none;
     outline:none;
@@ -399,6 +417,7 @@
     border:none;
     outline:none;
   }
+
 
 }
 
@@ -500,12 +519,12 @@
 
 .spacer-white{
   height:30rem;
-  background:#ddd;
+  // background:#ddd;
 }
 
 .spacer-grey{
   height:30rem;
-  background:#555;
+  // background:#555;
 }
 
 .flex{

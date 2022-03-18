@@ -1,67 +1,12 @@
 import React from 'react';
+import VisualAllNfts from '../visual/VisualAllNfts'
 
-import '../../scss/utility/body.scss';
 
 function ExploreVisualResults() {
   return (
-    <div className="col100 p1">
-      <div className="card-container overflow-y">
-        <div className="card-md">
-          card
-        </div>
-        <div className="card-md">
-          card
-        </div>
-        <div className="card-md">
-          card
-        </div>
-        <div className="card-md">
-          card
-        </div>
-        <div className="card-md">
-          card
-        </div>
-        <div className="card-md">
-          card
-        </div>
-        <div className="card-md">
-          card
-        </div>
-        <div className="card-md">
-          card
-        </div>
-        <div className="card-md">
-          card
-        </div>
-        <div className="card-md">
-          card
-        </div>
-        <div className="card-md">
-          card
-        </div>
-        <div className="card-md">
-          card
-        </div>
-        <div className="card-md">
-          card
-        </div>
-        <div className="card-md">
-          card
-        </div>
-        <div className="card-md">
-          card
-        </div>
-        <div className="card-md">
-          card
-        </div>
-        <div className="card-md">
-          card
-        </div>
-        <div className="card-md">
-          card
-        </div>
+      <div className="overflow-y">
+        <VisualAllNfts/>
       </div>
-    </div>
   )
 }
 

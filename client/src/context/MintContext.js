@@ -15,19 +15,16 @@ export function useMintFunctions() {
 export function MintProvider({ children }) {
 
   const [ nftTitle, setNftTitle ] = useState('My NFT');
+  const [ nftQuantity, setNftQuantity ] = useState('');
+  const [ existingAbi, setExistingAbi ] = useState('');
+  const [ existingPermalink, setExistingPermalink ] = useState('');
+  const [ permalinkRadio, setPermalinkRadio ] = useState('none');
+  const [ permalinkInputPlaceholder, setPermalinkInputPlaceholder ] = useState('none');
   const [ nftDescription, setNftDescription ] = useState('');
   const [ inputAttribute, setInputAttribute ] = useState('');
   const [ inputValue, setInputValue ] = useState('');
   const [ nftAttributes, setNftAttributes ] = useState([]);
-  const [ nftSimpleAdvanced, setNftSimpleAdvanced ] = useState('');
 
-  function resetNftSimpleAdvanced() {
-    setNftSimpleAdvanced("");
-  }
-
-  function createSimpleNft() {
-    setNftSimpleAdvanced("simple");
-  }
 
   function addAttribute() {
     const newAttribute = { 
@@ -47,10 +44,26 @@ export function MintProvider({ children }) {
     console.log('bye');
   }
   
+
+  useEffect(() => {
+
+    { permalinkRadio === 'none' ? 
+     setPermalinkInputPlaceholder('')
+     :
+     setPermalinkInputPlaceholder(`Existing ${permalinkRadio} link`)
+    }
+
+  }, [permalinkRadio])
+
   return(
     <MintDataContext.Provider 
       value={{ 
         nftTitle, setNftTitle, 
+        nftQuantity, setNftQuantity, 
+        existingAbi, setExistingAbi, 
+        existingPermalink, setExistingPermalink, 
+        permalinkRadio, setPermalinkRadio, 
+        permalinkInputPlaceholder, setPermalinkInputPlaceholder,
         nftDescription, setNftDescription, 
         nftAttributes, setNftAttributes, 
         inputValue, setInputValue,
@@ -60,9 +73,6 @@ export function MintProvider({ children }) {
         value={{ 
           removeAttribute, 
           addAttribute, 
-          resetNftSimpleAdvanced, 
-          createSimpleNft, 
-          nftSimpleAdvanced, setNftSimpleAdvanced
       }}>
             { children }
       </MintFunctionContext.Provider>    

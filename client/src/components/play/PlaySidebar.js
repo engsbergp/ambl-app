@@ -1,17 +1,17 @@
 import React from 'react'
-import { useActiveTheme, useThemeStyles } from '../../context/ThemeContext';
+import { useThemeStyles } from '../../context/ThemeContext';
 
 function PlaySidebar() {
 
-  const { bg1, setBg1 } = useThemeStyles();
+  const { text1Active, btn } = useThemeStyles();
 
   return (
-    <div style={{ background:bg1 }} className="play-sidebar">
+    <div className="play-sidebar">
       <div className="play-collection">
         <p>NFT collection</p>
       </div>
       <div className="play-add">
-        <button className="play-add-button">
+        <button style={{ background:btn, color:text1Active }} className="btn-round-sm">
           add to playlist
         </button>
       </div>

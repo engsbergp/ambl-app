@@ -1,5 +1,4 @@
 import React, { useState, useContext, useEffect } from "react";
-import themes from '../scss/colors/themes.json';
 
 const ThemeContext = React.createContext();
 const StyleContext = React.createContext();
@@ -20,10 +19,10 @@ export function ThemeProvider({ children }) {
   const [ bg2, setBg2 ] = useState('');
   const [ btn, setBtn ] = useState('');
   const [ btnHover, setBtnHover ] = useState('');
-  const [ textLight, setTextLight ] = useState('');
-  const [ textLightActive, setTextLightActive ] = useState('');
-  const [ textDark, setTextDark ] = useState('');
-  const [ textDarkActive, setTextDarkActive ] = useState('');
+  const [ text1, setText1 ] = useState('');
+  const [ text1Active, setText1Active ] = useState('');
+  const [ text2, setText2 ] = useState('');
+  const [ text2Active, setText2Active ] = useState('');
   const [ scrollbar, setScrollbar ] = useState('');
   const [ scrollbarHover, setScrollbarHover ] = useState('');
   const [ card, setCard ] = useState('');
@@ -34,10 +33,10 @@ export function ThemeProvider({ children }) {
     setBg2('#555');
     setBtn('#BFDBF7');
     setBtnHover('#8EAECE');
-    setTextLight('#FFF');
-    setTextLightActive('#AAA');
-    setTextDark('#011118');
-    setTextDarkActive('#02202A');
+    setText1('#011118');
+    setText1Active('#02202A');
+    setText2('#FFF');
+    setText2Active('#AAA');
     setScrollbar('#CED1DD');
     setScrollbarHover('#DEDFE2');
     setCard('#C6E3FF');
@@ -51,10 +50,10 @@ export function ThemeProvider({ children }) {
                                       btn, setBtn, 
                                       themeName, setThemeName,
                                       btnHover, setBtnHover,
-                                      textLight, setTextLight,
-                                      textLightActive, setTextLightActive,
-                                      textDark, setTextDark,
-                                      textDarkActive, setTextDarkActive,
+                                      text1, setText1,
+                                      text1Active, setText1Active,
+                                      text2, setText2,
+                                      text2Active, setText2Active,
                                       scrollbar, setScrollbar,
                                       scrollbarHover, setScrollbarHover,
                                       card, setCard

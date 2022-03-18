@@ -3,8 +3,6 @@ import AudioRecents from './AudioRecents';
 import AudioRecommendedArtists from './AudioRecommendedArtists';
 import SpotifySearchResults from './SpotifySearchResults';
 import { useSpotifySearch } from '../../context/AudioContext';
-import '../../scss/utility/body.scss';
-import '../../scss/colors/colors.scss';
 
 function AudioSearch() {
 

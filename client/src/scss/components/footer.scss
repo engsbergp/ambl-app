@@ -70,7 +70,6 @@
     display: flex;
     flex-direction: column;
     overflow:none;
-    color:$text-active;
   }
   &-metadata-mobile{
     display:none;
@@ -88,29 +87,19 @@
     width:25%;
     background:transparent;
     border:none;
-    color:#bbb;
-    transition:.2s;
+    opacity:.6;
     font-size: 1rem;
     cursor:pointer;
-    font-size:.9rem;
   }
 
-  &-button:hover{
-    background:#444;
-    color:$text-active;
-    }
 
   &-button-active{
     height:9vh;
     width:25%;
-    background:transparent;
     border:none;
-    transition:.2s;
     font-size: 1rem;
-    background:#444;
-    color:$text-active;
+    opacity:1;
     cursor:pointer;
-    font-size:.9rem;
   }
 
   &-button-mobile{
@@ -122,10 +111,8 @@
     flex-direction: row;
     overflow:hidden;
     opacity:1;
-    // height:55vh;
+    height:55vh;
     width:100%;
-    transition:ease-in-out .6s;
-    background:#444;
     padding-left: 1rem;
   }
 

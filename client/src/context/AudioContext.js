@@ -71,6 +71,11 @@ export function AudioProvider({ children }) {
   const [ spotifySearchResults, setSpotifySearchResults ] = useState([]);
   const [ spotifySearch, setSpotifySearch ] = useState('');
   
+  //TRACK URI
+  const [ trackUri, setTrackUri ] = useState('');
+  const [ recentUri, setRecentUri ] = useState('');
+  const [ searchUri, setSearchUri ] = useState('');
+
   //PLAYER
   const [ trackPlaying, setTrackPlaying ] = useState('');
 
@@ -150,6 +155,7 @@ export function AudioProvider({ children }) {
         // user ID set above
         const playlists = await spotifyApi.getUserPlaylists({userId});
         // console.log('Retrieved playlists', playlists.body.items);
+       
         // this is an array of all the user's playlists
         // sent to audio queue, where a selected playlist is determined
         // selected playlist is mapped again to display tracks, artist, and images
@@ -162,6 +168,7 @@ export function AudioProvider({ children }) {
 
 
   //RETURN TRACKS FROM SELECTED PLAYLIST
+  //used in audio/AudioQueue
   useEffect(() => {
     if (!accessToken) return;
       axios.get(`https://api.spotify.com/v1/playlists/${selectedPlaylist}/tracks`, {
@@ -169,7 +176,7 @@ export function AudioProvider({ children }) {
                     'Content-Type': 'application/json' }
       }).then(res => {
         setSelectedPlaylistTracks(res.data.items)
-        // console.log(selectedPlaylistTracks)
+        // console.log(res.data.items)
       }).catch(e => {
         console.error(e);
       }) 
@@ -182,10 +189,10 @@ export function AudioProvider({ children }) {
       axios.get('https://api.spotify.com/v1/me/player/recently-played', {
         headers: { 'Authorization' : 'Bearer ' + accessToken }
       }).then(res => {
-        setRecentlyPlayed(res.data.items)
-        setRecommendedArtist(res.data.items[0].track.artists[0].id)
+        setRecentlyPlayed(res.data.items);
+        setRecommendedArtist(res.data.items[0].track.artists[0].id);
         // console.log(recommendedArtist)
-        // console.log(res)
+        // console.log(res.data.items)
       }).catch(e => {
         console.error(e);
       }) 
@@ -200,7 +207,7 @@ export function AudioProvider({ children }) {
         headers: { 'Authorization' : 'Bearer ' + accessToken }
       }).then(res => {
         // setRecommendedArtists(res.data.artists)
-        console.log(res)
+        // console.log(res)
       }).catch(e => {
         console.error(e);
       }) 
@@ -234,15 +241,11 @@ export function AudioProvider({ children }) {
       }) 
   }, [userId])
 
-
   //GO TO ARTISTS PAGE
     //selected artist
   
   //GO TO ALBUM PAGE
     //selected album
-
-
-
 
   return(
     <SpotifyUserDataContext.Provider
@@ -250,7 +253,10 @@ export function AudioProvider({ children }) {
     }}>
       <SpotifyPlayerContext.Provider 
         value={{ 
-          trackPlaying, setTrackPlaying 
+          trackPlaying, setTrackPlaying,
+          recentUri, setRecentUri,
+          searchUri, setSearchUri,
+          trackUri, setTrackUri 
       }}>
         <SpotifySearchContext.Provider 
           value={{ 
@@ -278,7 +284,7 @@ export function AudioProvider({ children }) {
                   }}>
 
                     {/* <SpotifyFunctionContext.Provider
-                      value={{ getSelectedTrackId 
+                      value={{ handlePlay 
                     }}> */}
 
                     { children }

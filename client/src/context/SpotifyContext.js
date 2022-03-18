@@ -3,7 +3,6 @@ import axios from "axios";
 
 const SpotifyTokenContext = React.createContext();
 
-
 //send all spotify tokens to provider around application 
 export function useSpotifyTokens() {
   return useContext(SpotifyTokenContext);
@@ -24,7 +23,7 @@ export function SpotifyProvider( {children} ) {
   //post to server port 8080
   //set global access to auth, refresh, and expiration
   useEffect(() => {
-    axios.post(`http://3.92.203.97:8080/login`, {
+    axios.post(`http://localhost:8080/login`, {
       code,
     }).then(res => {
       setAccessToken(res.data.accessToken);
@@ -44,7 +43,7 @@ export function SpotifyProvider( {children} ) {
 
     //reset access token every 59 minutes
     const interval = setInterval(() => {
-      axios.post(`http://3.92.203.97:8080/refresh`, {
+      axios.post(`http://localhost:8080/refresh`, {
         refreshToken,
       }).then(res => {
         setAccessToken(res.data.accessToken);
