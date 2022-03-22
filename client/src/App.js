@@ -23,8 +23,6 @@ import './scss/App.scss';
 const App = () => {
   
 
-
-
   return (
     <ThemeProvider>
       <Web3Provider>

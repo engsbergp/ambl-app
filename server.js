@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 const bodyParser = require('body-parser');
 const SpotifyWebApi = require('spotify-web-api-node');
 
@@ -11,19 +12,27 @@ const PORT = process.env.PORT || 8080;
 app.use(cors());
 app.use(bodyParser.json());
 
+app.use(express.static(path.join(__dirname, "client", "build")));
 
 //retrieve initial auth token, refresh token, and session expiration
 
 app.post('/login', (req, res) => {
   //set redirect and retrieve the ID and secret, stored in 'code' from URL
   const code = req.body.code
-  console.log(code);
+  // console.log(code);
   const spotifyApi = new SpotifyWebApi({
-    // redirectUri: 'https://ambl.io',
-    redirectUri: 'http://localhost:3000',
-    // redirectUri: 'http://3.92.203.97:3000',
-    clientId: process.env.DEV_REACT_APP_SPOTIFY_CLIENT_ID,
-    clientSecret: process.env.DEV_REACT_APP_SPOTIFY_CLIENT_SECRET,
+
+    redirectUri: 'http://localhost:8080',
+    clientId: process.env.REACT_APP_SPOTIFY_CLIENT_ID,
+    clientSecret: process.env.REACT_APP_SPOTIFY_CLIENT_SECRET,
+
+    // redirectUri: 'http://localhost:3000',
+    // clientId: process.env.DEV_REACT_APP_SPOTIFY_CLIENT_ID,
+    // clientSecret: process.env.DEV_REACT_APP_SPOTIFY_CLIENT_SECRET,
+    
+    // redirectUri: 'http://localhost:3000',
+    // clientId: process.env.DEV_REACT_APP_SPOTIFY_CLIENT_ID,
+    // clientSecret: process.env.DEV_REACT_APP_SPOTIFY_CLIENT_SECRET,
   })
 
   spotifyApi
@@ -38,7 +47,6 @@ app.post('/login', (req, res) => {
       })
   })
   .catch((err) => {
-    // res.sendStatus(400);
     console.log(err);
   })
 })
@@ -50,11 +58,18 @@ app.post('/refresh', (req, res) => {
   //set port and retrieve the refresh token with the ID and secret
   const refreshToken = req.body.refreshToken;
   const spotifyApi = new SpotifyWebApi({
-    // redirectUri: 'https://ambl.io',
-    redirectUri: 'http://localhost:3000',
-    // redirectUri: 'http://3.92.203.97:3000',
-    clientId: process.env.DEV_REACT_APP_SPOTIFY_CLIENT_ID,
-    clientSecret: process.env.DEV_REACT_APP_SPOTIFY_CLIENT_SECRET,
+
+    redirectUri: 'http://localhost:8080',
+    clientId: process.env.REACT_APP_SPOTIFY_CLIENT_ID,
+    clientSecret: process.env.REACT_APP_SPOTIFY_CLIENT_SECRET,
+
+    // redirectUri: 'http://localhost:3000',
+    // clientId: process.env.DEV_REACT_APP_SPOTIFY_CLIENT_ID,
+    // clientSecret: process.env.DEV_REACT_APP_SPOTIFY_CLIENT_SECRET,
+
+    // redirectUri: 'http://localhost:3000',
+    // clientId: process.env.DEV_REACT_APP_SPOTIFY_CLIENT_ID,
+    // clientSecret: process.env.DEV_REACT_APP_SPOTIFY_CLIENT_SECRET,
     refreshToken
   })
 
