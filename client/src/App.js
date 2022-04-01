@@ -2,12 +2,13 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { ModalProvider } from './context/ModalContext';
 import { AudioProvider } from './context/AudioContext';
-import { AuthProvider } from './context/AuthContext';
 import { MintProvider } from './context/MintContext';
 import { Web3Provider } from './context/Web3Context';
+import { AuthProvider } from './context/AuthContext';
 import { SpotifyProvider } from './context/SpotifyContext';
 import { UtilityProvider } from './context/UtilityContext';
 import { ThemeProvider } from './context/ThemeContext';
+import { MoralisProvider } from "react-moralis";
 import * as ROUTES from './constants/routes';
 import Header from './components/header/header';
 import Footer from './components/footer/footer';
@@ -22,18 +23,19 @@ import './scss/App.scss';
 
 const App = () => {
   
-
   return (
-    <ThemeProvider>
-      <Web3Provider>
-        <MintProvider>
-          <ModalProvider>
-            <AuthProvider>
-              <SpotifyProvider>
-                <AudioProvider>
-                  <UtilityProvider>
-                    <div className="App">
-                      <Router>
+    // <MoralisProvider serverUrl="https://v1wfbyfxl6rk.usemoralis.com:2053/server" appId="e9KypoVfZyy1lD3UdfcjzQv2YlBz29o0DUhwGh71">
+    <MoralisProvider serverUrl="https://kxuhrrby9w9m.usemoralis.com:2053/server" appId="w0PeIyOAFyKZSLr6XOGBkbpBvJoydyj5KAvroyIx">
+      <ThemeProvider>
+        <AuthProvider>
+          <Web3Provider>
+            <MintProvider>
+              <ModalProvider>
+                <SpotifyProvider>
+                  <AudioProvider>
+                    <UtilityProvider>
+                      <div className="App">
+                        <Router>
                           <Switch>
                             <Route exact path={ROUTES.HOME} component={ROUTES.Visualizer} />
                             <Route path={ROUTES.EXPLORE} component={ROUTES.Explore} />
@@ -42,18 +44,19 @@ const App = () => {
                             <Route path={ROUTES.SHARE} component={ROUTES.Share} />
                             <Route path={ROUTES.ABOUT} component={ROUTES.About} />
                           </Switch>
-                        <Header/>
-                        <Footer/>
-                      </Router>
-                    </div>
-                  </UtilityProvider>
-                </AudioProvider>
-              </SpotifyProvider>
-            </AuthProvider>
-          </ModalProvider>
-        </MintProvider>
-      </Web3Provider>
-    </ThemeProvider>
+                          <Header/>
+                          <Footer/>
+                        </Router>
+                      </div>
+                    </UtilityProvider>
+                  </AudioProvider>
+                </SpotifyProvider>
+              </ModalProvider>
+            </MintProvider>
+          </Web3Provider>
+        </AuthProvider>
+      </ThemeProvider>
+    </MoralisProvider>  
   );
 }
 

@@ -6,7 +6,7 @@
         "creator": "phil",
         "styles": {
           "name":"greystyle",
-          "bg":"#444",
+          "bg1":"#444",
           "bg2":"#555",
           "btn":"#777",
           "btnHover":"#656565",
@@ -24,7 +24,7 @@
         "creator": "phil",
         "styles": {
           "name": "light mode",
-          "bg":"#E1E5F2",
+          "bg1":"#E1E5F2",
           "bg2":"#D6DCFF",
           "btn":"#BFDBF7",
           "btnHover":"#8EAECE",
@@ -42,7 +42,7 @@
         "creator": "phil",
         "styles":{
           "name": "dark mode",
-          "bg":"#1B264F",
+          "bg1":"#1B264F",
           "bg2":"#274690",
           "btn":"#576CA8",
           "btnHover":"#485987",

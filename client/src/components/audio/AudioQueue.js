@@ -40,7 +40,7 @@ function AudioQueue() {
                   className="row pr1 align-center pointer btn-transparent"
                   onClick={() => setTrackUri(item.track.uri)}
                 >
-                  <img src={smallestAlbumImage.url} className="thumbnail"/>
+                  <img src={smallestAlbumImage.url} alt={item.track.name} className="thumbnail"/>
                   <div className="flex column ml1">
                     <p className="active">{item.track.name}</p>
                     <p>{item.track.artists[0].name}</p>

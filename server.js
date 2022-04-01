@@ -12,27 +12,23 @@ const PORT = process.env.PORT || 8080;
 app.use(cors());
 app.use(bodyParser.json());
 
-app.use(express.static(path.join(__dirname, "client", "build")));
+
+// app.use(express.static(path.join(__dirname, "client", "build")));
 
 //retrieve initial auth token, refresh token, and session expiration
 
 app.post('/login', (req, res) => {
   //set redirect and retrieve the ID and secret, stored in 'code' from URL
   const code = req.body.code
-  // console.log(code);
   const spotifyApi = new SpotifyWebApi({
 
-    redirectUri: 'http://localhost:8080',
-    clientId: process.env.REACT_APP_SPOTIFY_CLIENT_ID,
-    clientSecret: process.env.REACT_APP_SPOTIFY_CLIENT_SECRET,
+    // redirectUri: 'http://localhost:8080',
+    // clientId: process.env.REACT_APP_SPOTIFY_CLIENT_ID,
+    // clientSecret: process.env.REACT_APP_SPOTIFY_CLIENT_SECRET,
 
-    // redirectUri: 'http://localhost:3000',
-    // clientId: process.env.DEV_REACT_APP_SPOTIFY_CLIENT_ID,
-    // clientSecret: process.env.DEV_REACT_APP_SPOTIFY_CLIENT_SECRET,
-    
-    // redirectUri: 'http://localhost:3000',
-    // clientId: process.env.DEV_REACT_APP_SPOTIFY_CLIENT_ID,
-    // clientSecret: process.env.DEV_REACT_APP_SPOTIFY_CLIENT_SECRET,
+    redirectUri: 'http://localhost:3000',
+    clientId: process.env.DEV_REACT_APP_SPOTIFY_CLIENT_ID,
+    clientSecret: process.env.DEV_REACT_APP_SPOTIFY_CLIENT_SECRET,
   })
 
   spotifyApi
@@ -59,17 +55,14 @@ app.post('/refresh', (req, res) => {
   const refreshToken = req.body.refreshToken;
   const spotifyApi = new SpotifyWebApi({
 
-    redirectUri: 'http://localhost:8080',
-    clientId: process.env.REACT_APP_SPOTIFY_CLIENT_ID,
-    clientSecret: process.env.REACT_APP_SPOTIFY_CLIENT_SECRET,
+    // redirectUri: 'http://localhost:8080',
+    // clientId: process.env.REACT_APP_SPOTIFY_CLIENT_ID,
+    // clientSecret: process.env.REACT_APP_SPOTIFY_CLIENT_SECRET,
 
-    // redirectUri: 'http://localhost:3000',
-    // clientId: process.env.DEV_REACT_APP_SPOTIFY_CLIENT_ID,
-    // clientSecret: process.env.DEV_REACT_APP_SPOTIFY_CLIENT_SECRET,
+    redirectUri: 'http://localhost:3000',
+    clientId: process.env.DEV_REACT_APP_SPOTIFY_CLIENT_ID,
+    clientSecret: process.env.DEV_REACT_APP_SPOTIFY_CLIENT_SECRET,
 
-    // redirectUri: 'http://localhost:3000',
-    // clientId: process.env.DEV_REACT_APP_SPOTIFY_CLIENT_ID,
-    // clientSecret: process.env.DEV_REACT_APP_SPOTIFY_CLIENT_SECRET,
     refreshToken
   })
 
@@ -88,6 +81,10 @@ app.post('/refresh', (req, res) => {
     })
   })
 
+
+  // app.post('/userNft', (req, res) => {
+
+  // })
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'))

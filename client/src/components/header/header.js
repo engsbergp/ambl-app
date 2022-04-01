@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import { useHistory, NavLink } from 'react-router-dom';
-import { useUserInfo } from '../../context/AuthContext';
 import { useSpotifyTokens } from '../../context/SpotifyContext';
 import { useSpotifyUserData } from '../../context/AudioContext';
+import { useAuthData } from '../../context/AuthContext';
 import { useThemeStyles } from '../../context/ThemeContext'
-import { useWeb3Context } from '../../context/Web3Context';
-import { useWeb3Functions } from '../../context/Web3Context';
+// import { useMoralis } from "react-moralis";
 import { useActiveModal, useToggleModal } from '../../context/ModalContext';
 import HeaderExpanded from './HeaderExpanded';
-import ThemePicker from './ThemePicker';
-import SignUpModal from '../modals/SignUpModal';
-import UserModal from '../modals/UserModal';
+import EditUserProfileModal from '../modals/EditUserProfileModal';
+import UserProfileModal from '../modals/UserProfileModal';
+import LoginSuccessModal from '../modals/LoginSuccessModal';
+import ThemeModal from '../modals/ThemeModal';
 import * as ROUTES from '../../constants/routes'
 import * as FaIcons from 'react-icons/fa';
 import '../../scss/components/header.scss'
@@ -21,27 +21,37 @@ function Header() {
   //local header states
   const history = useHistory();
   const [ headerExpanded, setHeaderExpanded ] = useState(false);
-  const [ themeExpanded, setThemeExpanded ] = useState(false);
 
   //modal states
-  const { toggleSignUpModal, toggleUserModal }  = useToggleModal(); 
-  const { signUpModalOpen, userModalOpen } = useActiveModal();
+  const { toggleUserProfileModal, toggleLoginSuccessModal } = useToggleModal(); 
+  const { editUserProfileModalOpen, userProfileModalOpen, themeModalOpen, loginSuccessModalOpen } = useActiveModal();
   
-  //auth states
-  const { user } = useUserInfo();
+  //moralis states
+  // const { authenticate, user } = useMoralis();
 
-  //web3 states
-  const { walletAddress, walletConnected } = useWeb3Context();
-  const { connectWallet } = useWeb3Functions();
+  //auth states
+  const { currentAvatar } = useAuthData();
+
+  //local states
+
+  const { user, setUser } = useAuthData();
+
+  // const login = async () => {
+  //   try {
+  //     await authenticate();
+  //   } catch(error){
+  //     alert(error)
+  //   }
+  // }
 
   //spotify states
   const { accessToken } = useSpotifyTokens();
   const { userName } = useSpotifyUserData();
-  // const DEV_SPOTIFY_AUTH_URL = "https://accounts.spotify.com/authorize?client_id=f95d203d997545f18e89491cb629f748&response_type=code&redirect_uri=http://localhost:8080&scope=streaming%20user-read-email%20user-read-private%20user-library-read%20user-library-modify%20user-read-playback-state%20user-modify-playback-state%20user-read-recently-played%20playlist-read-private%20user-top-read%20user-read-currently-playing%20playlist-read-collaborative%20playlist-modify-private%20user-read-playback-position"
-  const SPOTIFY_AUTH_URL = "https://accounts.spotify.com/authorize?client_id=7a3d7b5b794244a58b1ee120f9fc3989&response_type=code&redirect_uri=http://localhost:8080&scope=streaming%20user-read-email%20user-read-private%20user-library-read%20user-library-modify%20user-read-playback-state%20user-modify-playback-state%20user-read-recently-played%20playlist-read-private%20user-top-read%20user-read-currently-playing%20playlist-read-collaborative%20playlist-modify-private%20user-read-playback-position"
+  const DEV_SPOTIFY_AUTH_URL = "https://accounts.spotify.com/authorize?client_id=f95d203d997545f18e89491cb629f748&response_type=code&redirect_uri=http://localhost:3000&scope=streaming%20user-read-email%20user-read-private%20user-library-read%20user-library-modify%20user-read-playback-state%20user-modify-playback-state%20user-read-recently-played%20playlist-read-private%20user-top-read%20user-read-currently-playing%20playlist-read-collaborative%20playlist-modify-private%20user-read-playback-position"
+  // const SPOTIFY_AUTH_URL = "https://accounts.spotify.com/authorize?client_id=7a3d7b5b794244a58b1ee120f9fc3989&response_type=code&redirect_uri=http://localhost:8080&scope=streaming%20user-read-email%20user-read-private%20user-library-read%20user-library-modify%20user-read-playback-state%20user-modify-playback-state%20user-read-recently-played%20playlist-read-private%20user-top-read%20user-read-currently-playing%20playlist-read-collaborative%20playlist-modify-private%20user-read-playback-position"
   
   //theme states
-  const { themeName, bg1, text1, text1Active, btn } = useThemeStyles();
+  const { bg1, text1, text1Active, btn } = useThemeStyles();
 
   function goAbout() {
     history.push('/about')
@@ -51,8 +61,9 @@ function Header() {
     setHeaderExpanded(!headerExpanded);
   }
 
-  function chooseTheme() {
-    setThemeExpanded(!themeExpanded);
+  function login() {
+    setUser(true); 
+    toggleLoginSuccessModal()
   }
 
   return (
@@ -69,32 +80,20 @@ function Header() {
       <div className="header-buttons">
         
         {/* MODALS */}
-          {signUpModalOpen && <SignUpModal/>}
-          {userModalOpen && <UserModal/>}
-
-        {/* SIGN IN BUTTON */}
-        {
-          user ? 
-          <button onClick={toggleUserModal} className="btn-circle-sm" style={{background:btn, color:text1Active}}>
-            { user?.email }
-          </button>
-        :
-          <button onClick={toggleSignUpModal} style={{background:btn, color:text1Active}} className="btn-circle-sm">
-            sign up
-          </button>
-        }
-  
-        {/* CONNECT WALLET */}
-        {
-          walletConnected ? 
-          <button className="btn-circle-sm" style={{background:btn, color:text1Active}}>
-            <p>{ walletAddress }</p>
-          </button>
-        : 
-          <button onClick={ connectWallet } className="btn-circle-sm" style={{background:btn, color:text1Active}}>
-            <p>connect wallet</p>
-          </button>
-        }
+          {
+          editUserProfileModalOpen && 
+            <div className='modal-bg'>
+              <EditUserProfileModal/>
+            </div>
+          }
+          {
+          userProfileModalOpen && 
+            <div className='modal-bg'>
+              <UserProfileModal/>
+            </div>
+           }
+          {themeModalOpen && <ThemeModal/>}
+          {loginSuccessModalOpen && <LoginSuccessModal/>}
 
         {/* CONNECT SPOTIFY */}
         {
@@ -104,27 +103,24 @@ function Header() {
             <FaIcons.FaSpotify/>
           </div>
         : 
-          // PRODUCTION URL
-          <a href={ SPOTIFY_AUTH_URL } className="btn-circle-sm gap-sm navlink" style={{background:btn, color:text1Active}}>
-            Connect Spotify 
+          <a href={ DEV_SPOTIFY_AUTH_URL } className="btn-circle-sm gap-sm navlink" style={{background:btn, color:text1Active}}>
+            Spotify as Guest 
             <FaIcons.FaSpotify/>
           </a>
-
-          // DEVELOPMENT URL
-          // <a href={ DEV_SPOTIFY_AUTH_URL } className="btn-circle-sm gap-sm navlink" style={{background:btn, color:text1Active}}>
-          //   Connect Spotify 
-          //   <FaIcons.FaSpotify/>
-          // </a>
         }
-        {/* THEME PICKER */}
-        <div onClick={ chooseTheme } className="btn-circle-sm" style={{background:btn, color:text1Active}}>
-            { themeName }
-        </div>
 
-          {/* theme dropdown */}
-          <div className={themeExpanded ? "header-themes show" : "header-themes remove"} style={{background:btn, color:text1Active}}>
-            <ThemePicker themeExpanded={themeExpanded}/>
-          </div>
+        {/* CONNECT WALLET */}
+        {
+          user === true ? 
+          <button onClick={ toggleUserProfileModal } className="btn-circle-sm" style={{background:btn, color:text1Active}}>
+            <p> ambl </p>
+            <img src={currentAvatar} alt="avatar" className="ml-sm" style={{width:"20px", height:"20px", borderRadius:"100vw"}}/>
+          </button>
+        : 
+          <button onClick={ login } className="btn-circle-sm" style={{background:btn, color:text1Active}}>
+            <p>connect as guest</p>
+          </button>
+        }
       
       </div>
       

@@ -39,13 +39,8 @@
   background: #656565;
 }
 
-.active {
-  color: #eee;
-  font-size: .9rem;
-}
-
 .disabled {
-  color: #444;
+  background: #777;
 }
 
 .select-white {

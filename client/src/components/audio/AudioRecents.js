@@ -12,14 +12,14 @@ export default function AudioRecents() {
     <>
       <p style={{color:text1}} className="mt1">Recently Played</p>
       <div className="card-container gap-sm width-100">
-        {recentlyPlayed.map(recents =>   
+        {recentlyPlayed.map((recents, index) =>   
           <div 
             style={{background:card, color:text1}} 
             className="card-md text-sm p1 pointer" 
-            key={recents.track.id}
+            key={index}
             onClick={() => setTrackUri(recents.track.uri)}
           >
-            <img src={recents.track.album.images[1].url} className="width-100"/>
+            <img src={recents.track.album.images[1].url} alt={recents.track.name} className="width-100"/>
             <p className="ellipsis width-100">{recents.track.name}</p>
             <p className="ellipsis width-100">{recents.track.artists[0].name}</p>
           </div>                 

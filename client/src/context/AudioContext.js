@@ -3,6 +3,7 @@ import { useSpotifyTokens } from "./SpotifyContext";
 import SpotifyWebApi from 'spotify-web-api-node';
 import axios from "axios";
 
+
 const spotifyApi = new SpotifyWebApi({
   clientId: process.env.REACT_APP_SPOTIFY_CLIENT_ID,
 })
@@ -80,7 +81,7 @@ export function AudioProvider({ children }) {
   const [ trackPlaying, setTrackPlaying ] = useState('');
 
   // FUNCTIONS
-  const [ selectedTrackId, setSelectedTrackId ] = useState('');
+  // const [ selectedTrackId, setSelectedTrackId ] = useState('');
   // const [ selectedArtistId, setSelectedArtistId ] = useState('');
   // const [ selectedAlbumId, setSelectedAlbumId ] = useState('');
   // const [ selectedPlaylistId, setSelectedPlaylistId ] = useState('');
@@ -138,9 +139,7 @@ export function AudioProvider({ children }) {
               albumUrl: smallestAlbumImage.url,
               album: track.album.name
             }
-            
           })
-          
         )
       })
 
@@ -164,7 +163,7 @@ export function AudioProvider({ children }) {
       })().catch(e => {
         console.error(e);
       }) 
-    }, [userId])
+    }, [userId, accessToken])
 
 
   //RETURN TRACKS FROM SELECTED PLAYLIST
@@ -180,7 +179,7 @@ export function AudioProvider({ children }) {
       }).catch(e => {
         console.error(e);
       }) 
-  }, [selectedPlaylist])
+  }, [selectedPlaylist, accessToken])
 
 
   //GET RECENTLY PLAYED
@@ -196,7 +195,7 @@ export function AudioProvider({ children }) {
       }).catch(e => {
         console.error(e);
       }) 
-  }, [userId])
+  }, [userId, accessToken])
 
 
   //GET RECOMMENDED ARTISTS
@@ -211,7 +210,7 @@ export function AudioProvider({ children }) {
       }).catch(e => {
         console.error(e);
       }) 
-  }, [recommendedArtist])
+  }, [recommendedArtist, accessToken])
 
 
   //GET FEATURED PLAYLISTS
@@ -225,7 +224,7 @@ export function AudioProvider({ children }) {
       }).catch(e => {
         console.error(e);
       }) 
-  }, [userId])
+  }, [userId, accessToken])
 
 
   //GET RECOMMENDED GENRES
@@ -239,7 +238,7 @@ export function AudioProvider({ children }) {
       }).catch(e => {
         console.error(e);
       }) 
-  }, [userId])
+  }, [userId, accessToken])
 
   //GO TO ARTISTS PAGE
     //selected artist

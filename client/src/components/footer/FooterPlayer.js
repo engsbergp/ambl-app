@@ -4,13 +4,14 @@ import AudioQueue from '../audio/AudioQueue';
 import AudioSearch from '../audio/AudioSearch';
 import '../../scss/components/footer.scss';
 import '../../scss/components/footer-mobile.scss';
-import { useThemeStyles } from '../../context/ThemeContext';
+import VisualAllNfts from '../visual/VisualAllNfts';
+// import { useThemeStyles } from '../../context/ThemeContext';
 
 function FooterPlayer() {  
 
   const { footerMenuActive } = useFooterNav();
 
-  const { bg1, bg2, text1, text2, text1Active, btn } = useThemeStyles();
+  // const { bg1, bg2, text1, text2, text1Active, btn } = useThemeStyles();
 
   return (
     <>
@@ -22,7 +23,7 @@ function FooterPlayer() {
       
       {/* FOOTER VIDEO */}
       <div className={footerMenuActive === 'video' ? "footer-pages" : "footer-pages remove"}>
-        <h1>FOOTER VIDEO</h1>
+        <VisualAllNfts />
       </div>
       
       {/* FOOTER RECENT */}

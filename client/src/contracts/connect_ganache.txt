@@ -1,0 +1,20 @@
+
+replace frpc.ini with ...
+
+
+[common]
+  server_addr = v1wfbyfxl6rk.usemoralis.com
+  server_port = 7000
+  token = KisoGuLq8p
+[ganache]
+  type = http
+  local_port = 7545
+  custom_domains = v1wfbyfxl6rk.usemoralis.com
+
+
+run exe through cli
+
+
+cd C:\Users\Phil\Downloads\frp_0.41.0_windows_amd64
+
+frpc.exe -c frpc.ini

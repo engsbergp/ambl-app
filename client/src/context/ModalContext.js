@@ -16,20 +16,30 @@ export function ModalProvider({ children }) {
   //individual contexts for each modal context
   //passed into a single, global 'modal provider'
   //organized into a 'modal function context' and a 'modal visibility context'
-  const [signUpModalOpen, setSignUpModalOpen] = useState(false);
-  const [userModalOpen, setUserModalOpen] = useState(false);
+  const [editUserProfileModalOpen, setEditUserProfileModalOpen] = useState(false);
+  const [userProfileModalOpen, setUserProfileModalOpen] = useState(false);
+  const [themeModalOpen, setThemeModalOpen] = useState(false);
+  const [loginSuccessModalOpen, setLoginSuccessModalOpen] = useState(false);
 
-  function toggleSignUpModal() {
-    setSignUpModalOpen(!signUpModalOpen);
+  function toggleLoginSuccessModal() {
+    setLoginSuccessModalOpen(!loginSuccessModalOpen);
   }
 
-  function toggleUserModal() {
-    setUserModalOpen(!userModalOpen);
+  function toggleEditUserProfileModal() {
+    setEditUserProfileModalOpen(!editUserProfileModalOpen);
+  }
+
+  function toggleUserProfileModal() {
+    setUserProfileModalOpen(!userProfileModalOpen);
+  }
+
+  function toggleThemeModal() {
+    setThemeModalOpen(!themeModalOpen);
   }
 
   return(
-    <ActiveModalContext.Provider value={{ signUpModalOpen, setSignUpModalOpen, userModalOpen, setUserModalOpen}}>
-      <ToggleModalContext.Provider value={{ toggleSignUpModal, toggleUserModal }}>
+    <ActiveModalContext.Provider value={{ editUserProfileModalOpen, setEditUserProfileModalOpen, userProfileModalOpen, setUserProfileModalOpen, themeModalOpen, setThemeModalOpen, loginSuccessModalOpen }}>
+      <ToggleModalContext.Provider value={{ toggleEditUserProfileModal, toggleUserProfileModal, toggleThemeModal, toggleLoginSuccessModal }}>
         {children}
       </ToggleModalContext.Provider>
     </ActiveModalContext.Provider>

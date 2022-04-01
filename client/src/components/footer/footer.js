@@ -37,7 +37,7 @@ const Footer = () => {
           <button
             onClick={() => setFooterMenuActive('audio')} 
             style={{background:bg1, color:text1}}
-            activeClassName="active"
+            activeclassname="active"
             className={footerMenuActive === 'audio' ? "footer-button-active" : 'footer-button'}
           >
             Audio
@@ -45,7 +45,7 @@ const Footer = () => {
           <button 
             onClick={() => setFooterMenuActive('video')} 
             style={{background:bg1, color:text1}}
-            activeClassName="active"
+            activeclassname="active"
             className={footerMenuActive === 'video' ? "footer-button-active" : 'footer-button'}
           >
             Video
@@ -53,7 +53,7 @@ const Footer = () => {
           <button 
             onClick={() => setFooterMenuActive('recent')} 
             style={{background:bg1, color:text1}}
-            activeClassName="active"
+            activeclassname="active"
             className={footerMenuActive === 'recent' ? "footer-button-active" : 'footer-button'}
           >
             Recent
@@ -61,7 +61,7 @@ const Footer = () => {
           <button 
             onClick={() => setFooterMenuActive('collection')} 
             style={{background:bg1, color:text1}}
-            activeClassName="active"
+            activeclassname="active"
             className={footerMenuActive === 'collection' ? "footer-button-active" : 'footer-button'}
           >
             Collection

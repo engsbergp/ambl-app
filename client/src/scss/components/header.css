@@ -39,9 +39,8 @@
   background: #656565;
 }
 
-.active {
-  color: #eee;
-  font-size: .9rem;
+.disabled {
+  background: #777;
 }
 
 .select-white {
@@ -121,6 +120,7 @@
   border-radius: .75rem;
   border: none;
   cursor: pointer;
+  max-width: height;
 }
 
 .btn-round-md {
@@ -543,6 +543,31 @@
   }
 }
 
+.modal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  border-radius: 15px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 2rem;
+}
+
+.modal-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
 .border-grey {
   border: 1px solid #888;
   border-radius: 10px;
@@ -565,7 +590,7 @@
 }
 
 .input-title {
-  width: 80%;
+  width: 70%;
   height: 2rem;
   border: none;
   outline: none;
@@ -579,8 +604,23 @@
   outline: none;
 }
 
+.input-quantity {
+  width: 10%;
+  height: 2rem;
+  border: none;
+  outline: none;
+  padding-left: .5rem;
+  border-radius: 5px;
+  background: #eee;
+}
+
+.input-quantity:focus, .input-quantity:active {
+  border: none;
+  outline: none;
+}
+
 .input-attribute {
-  width: 50%;
+  width: 30%;
   height: 2rem;
   border: none;
   outline: none;
@@ -705,12 +745,10 @@
 
 .spacer-white {
   height: 30rem;
-  background: #ddd;
 }
 
 .spacer-grey {
   height: 30rem;
-  background: #555;
 }
 
 .flex {

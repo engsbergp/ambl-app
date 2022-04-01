@@ -40,9 +40,8 @@
   background: #656565;
 }
 
-.active {
-  color: #eee;
-  font-size: .9rem;
+.disabled {
+  background: #777;
 }
 
 .select-white {

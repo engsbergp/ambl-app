@@ -30,7 +30,7 @@ export function ThemeProvider({ children }) {
   useEffect( () => {
     setThemeName('light mode');
     setBg1('#E1E5F2');
-    setBg2('#555');
+    setBg2('#D6DCFF');
     setBtn('#BFDBF7');
     setBtnHover('#8EAECE');
     setText1('#011118');

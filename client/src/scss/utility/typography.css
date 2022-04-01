@@ -39,9 +39,8 @@
   background: #656565;
 }
 
-.active {
-  color: #eee;
-  font-size: .9rem;
+.disabled {
+  background: #777;
 }
 
 .select-white {
@@ -71,16 +70,11 @@
 
 .navlink {
   text-decoration: none;
-  color: #bbb;
-  font-size: .9rem;
   margin: 0 1.5rem 0 1.5rem;
-  -webkit-transition: .2s;
-  transition: .2s;
 }
 
-.navlink:hover {
-  color: #eee;
-  font-size: .9rem;
+.active {
+  text-decoration: underline;
 }
 
 .icon-md {

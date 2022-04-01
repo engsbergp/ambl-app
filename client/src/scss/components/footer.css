@@ -50,6 +50,7 @@
   border-radius: .75rem;
   border: none;
   cursor: pointer;
+  max-width: height;
 }
 
 .btn-round-md {
@@ -472,6 +473,31 @@
   }
 }
 
+.modal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  border-radius: 15px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 2rem;
+}
+
+.modal-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
 .border-grey {
   border: 1px solid #888;
   border-radius: 10px;
@@ -494,7 +520,7 @@
 }
 
 .input-title {
-  width: 80%;
+  width: 70%;
   height: 2rem;
   border: none;
   outline: none;
@@ -508,8 +534,23 @@
   outline: none;
 }
 
+.input-quantity {
+  width: 10%;
+  height: 2rem;
+  border: none;
+  outline: none;
+  padding-left: .5rem;
+  border-radius: 5px;
+  background: #eee;
+}
+
+.input-quantity:focus, .input-quantity:active {
+  border: none;
+  outline: none;
+}
+
 .input-attribute {
-  width: 50%;
+  width: 30%;
   height: 2rem;
   border: none;
   outline: none;
@@ -634,12 +675,10 @@
 
 .spacer-white {
   height: 30rem;
-  background: #ddd;
 }
 
 .spacer-grey {
   height: 30rem;
-  background: #555;
 }
 
 .flex {
@@ -1028,9 +1067,8 @@
   background: #656565;
 }
 
-.active {
-  color: #eee;
-  font-size: .9rem;
+.disabled {
+  background: #777;
 }
 
 .select-white {
@@ -1173,7 +1211,6 @@
       -ms-flex-direction: column;
           flex-direction: column;
   overflow: none;
-  color: #eee;
 }
 
 .footer-metadata-mobile {
@@ -1193,31 +1230,18 @@
   width: 25%;
   background: transparent;
   border: none;
-  color: #bbb;
-  -webkit-transition: .2s;
-  transition: .2s;
+  opacity: .6;
   font-size: 1rem;
   cursor: pointer;
-  font-size: .9rem;
-}
-
-.footer-button:hover {
-  background: #444;
-  color: #eee;
 }
 
 .footer-button-active {
   height: 9vh;
   width: 25%;
-  background: transparent;
   border: none;
-  -webkit-transition: .2s;
-  transition: .2s;
   font-size: 1rem;
-  background: #444;
-  color: #eee;
+  opacity: 1;
   cursor: pointer;
-  font-size: .9rem;
 }
 
 .footer-button-mobile {
@@ -1234,10 +1258,8 @@
           flex-direction: row;
   overflow: hidden;
   opacity: 1;
+  height: 55vh;
   width: 100%;
-  -webkit-transition: ease-in-out .6s;
-  transition: ease-in-out .6s;
-  background: #444;
   padding-left: 1rem;
 }
 
