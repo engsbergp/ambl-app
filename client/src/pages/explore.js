@@ -1,61 +1,33 @@
 import { React, useState } from 'react';
-import ExploreAudioSearch from '../components/explore/ExploreAudioSearch';
 import ExploreAudioResults from '../components/explore/ExploreAudioResults';
-import ExploreVisualSearch from '../components/explore/ExploreVisualSearch';
 import ExploreVisualResults from '../components/explore/ExploreVisualResults';
 import { useThemeStyles } from '../context/ThemeContext'
-// import Switch from '@mui/material/Switch';
 import '../scss/pages/explore.scss';
 
 function Explore() {
 
   const { bg1, btn, text1 } = useThemeStyles();
 
-  const [ explore, setExplore ] = useState(true);
-
-  function toggleAudio() {
-    setExplore(!explore);
-  }
+  const [ explore, setExplore ] = useState("video");
 
   return (
-  <div className="page flex-row" style={{background:bg1}}>
+  <div className="page" style={{background:bg1}}>
   
-  {/* <div className="col30">
-    <div 
-      className="btn-round-sm"
-      style={{background:btn, color:text1}}
-      onClick={() => setExplore('audio')}
-    >
-      audio
-    </div>
-    <div className="btn-round-sm"
-      style={{background:btn, color:text1}}
-      onClick={() => setExplore('visual')}
-     >
-      visual
-    </div>
-      {
-        explore==='audio' ?
-        <ExploreAudioSearch/>
-        :
-        <ExploreVisualSearch/>
-      }
-    </div> */}
     <div className="col100">
-
-    {/* <Switch onChange={toggleAudio}></Switch> */}
-    <div 
-      className="btn-round-sm"
-      style={{background:btn, color:text1}}
-      onClick={() => setExplore(false)}
-    >
-      audio
-    </div>
-    <div className="btn-round-sm"
-      style={{background:btn, color:text1}}
-      onClick={() => setExplore(true)}
-     >
-      visual
+      <div className="row center mt-sm mb-sm">
+      <div className="btn-round-sm"
+        style={{width:"5rem", background:btn, color:text1}}
+        onClick={() => setExplore("video")}
+        >
+        visual
+      </div>
+      <div 
+        className="btn-round-sm"
+        style={{width:"5rem", background:btn, color:text1}}
+        onClick={() => setExplore("audio")}
+        >
+        audio
+      </div>
     </div>
 
       { 

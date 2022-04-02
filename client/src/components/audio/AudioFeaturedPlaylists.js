@@ -9,7 +9,7 @@ export default function AudioFeaturedPlaylists() {
   
   return (
     <>
-      <p style={{color:text1}}>Featured Playlists</p>
+      <p className="ml4 mt1 mb1" style={{color:text1}}>Featured Playlists</p>
       <div className="card-container gap-sm">
         {featuredPlaylists.map(featured => 
           <div style={{background:card, color:text1}} className="card-md text-sm p1 pointer" key={featured.id}>

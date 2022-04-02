@@ -1,5 +1,5 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 function HeaderExpanded() {
   return (
@@ -9,12 +9,12 @@ function HeaderExpanded() {
             Home
           </button>
         </NavLink>
-        <NavLink className="mobile-link" activeClassName="mobile-active" to="/listen">
+        <NavLink className="mobile-link" activeClassName="mobile-active" to="/explore">
           <button className="mobile-button">
             Listen 
           </button>
         </NavLink>        
-        <NavLink className="mobile-link" activeClassName="mobile-active" to="/create">
+        <NavLink className="mobile-link" activeClassName="mobile-active" to="/mint">
           <button className="mobile-button">
             Create
           </button>

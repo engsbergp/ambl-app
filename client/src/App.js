@@ -8,7 +8,6 @@ import { AuthProvider } from './context/AuthContext';
 import { SpotifyProvider } from './context/SpotifyContext';
 import { UtilityProvider } from './context/UtilityContext';
 import { ThemeProvider } from './context/ThemeContext';
-import { MoralisProvider } from "react-moralis";
 import * as ROUTES from './constants/routes';
 import Header from './components/header/header';
 import Footer from './components/footer/footer';
@@ -24,8 +23,6 @@ import './scss/App.scss';
 const App = () => {
   
   return (
-    // <MoralisProvider serverUrl="https://v1wfbyfxl6rk.usemoralis.com:2053/server" appId="e9KypoVfZyy1lD3UdfcjzQv2YlBz29o0DUhwGh71">
-    <MoralisProvider serverUrl="https://kxuhrrby9w9m.usemoralis.com:2053/server" appId="w0PeIyOAFyKZSLr6XOGBkbpBvJoydyj5KAvroyIx">
       <ThemeProvider>
         <AuthProvider>
           <Web3Provider>
@@ -45,7 +42,7 @@ const App = () => {
                             <Route path={ROUTES.ABOUT} component={ROUTES.About} />
                           </Switch>
                           <Header/>
-                          <Footer/>
+                          {/* <Footer/> */}
                         </Router>
                       </div>
                     </UtilityProvider>
@@ -56,7 +53,6 @@ const App = () => {
           </Web3Provider>
         </AuthProvider>
       </ThemeProvider>
-    </MoralisProvider>  
   );
 }
 

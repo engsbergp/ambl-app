@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { useMoralisFile } from "react-moralis";
 import { useMintData } from '../../context/MintContext';
 
 
@@ -8,7 +7,6 @@ export default function MintPlayer() {
 
   const { setNftIpfsHash, nftIpfsUrl, setNftIpfsUrl } = useMintData();
 
-  const { saveFile } = useMoralisFile();  
   const [ nftFile, setNftFile ] = useState('');
   const [ activeNft, setActiveNft ] = useState('');
 
@@ -21,15 +19,6 @@ export default function MintPlayer() {
 
 
   //save to ipfs
-  const saveFileIpfs = async (f) => {
-    const fileIpfs = await saveFile(
-      f.name, 
-      nftFile, 
-      {saveIPFS: true}
-    );
-    setNftIpfsHash(fileIpfs._hash);
-    setNftIpfsUrl(fileIpfs._ipfs);
-  }
   
   //remove file
   const removeFile = () => {
@@ -53,7 +42,7 @@ export default function MintPlayer() {
           <>
             <img src={activeNft} alt="my nft" style={{ maxWidth:"80%", maxHeight:"80%"}}/>
             <div className="row center gap1 mt1">
-              <button className={nftIpfsUrl && "remove"} onClick={saveFileIpfs}>Upload File</button>
+              <button className={nftIpfsUrl && "remove"} onClick={removeFile}>Upload File</button>
               <button onClick={removeFile}>Remove File</button>
             </div>
           </>

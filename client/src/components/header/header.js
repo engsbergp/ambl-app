@@ -4,7 +4,6 @@ import { useSpotifyTokens } from '../../context/SpotifyContext';
 import { useSpotifyUserData } from '../../context/AudioContext';
 import { useAuthData } from '../../context/AuthContext';
 import { useThemeStyles } from '../../context/ThemeContext'
-// import { useMoralis } from "react-moralis";
 import { useActiveModal, useToggleModal } from '../../context/ModalContext';
 import HeaderExpanded from './HeaderExpanded';
 import EditUserProfileModal from '../modals/EditUserProfileModal';
@@ -25,9 +24,6 @@ function Header() {
   //modal states
   const { toggleUserProfileModal, toggleLoginSuccessModal } = useToggleModal(); 
   const { editUserProfileModalOpen, userProfileModalOpen, themeModalOpen, loginSuccessModalOpen } = useActiveModal();
-  
-  //moralis states
-  // const { authenticate, user } = useMoralis();
 
   //auth states
   const { currentAvatar } = useAuthData();
@@ -35,14 +31,6 @@ function Header() {
   //local states
 
   const { user, setUser } = useAuthData();
-
-  // const login = async () => {
-  //   try {
-  //     await authenticate();
-  //   } catch(error){
-  //     alert(error)
-  //   }
-  // }
 
   //spotify states
   const { accessToken } = useSpotifyTokens();

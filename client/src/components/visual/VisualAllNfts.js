@@ -1,33 +1,37 @@
-import React, {useState, useEffect } from 'react';
+import React from 'react';
 import metadata from './metadata.json';
 import { useThemeStyles } from '../../context/ThemeContext'
-import mime from "mime";
-// import { useAuthData } from '../../context/AuthContext'
-// import { useMoralisWeb3Api } from "react-moralis";
-// import axios from "axios";
 
 export default function VisualAllNfts() {
-
-  //nft states
-  // const [ metadata, setMetadata ] = useState([]);
-  // const [ isLoggedIn, setIsLoggedIn ] = useState(false);
   
-  const { card, text1 } = useThemeStyles();
+  const { text1 } = useThemeStyles();
 
   return (
     <>
-    {/* <button style={{height:"200px", width:"200px"}} onClick={checkMimeType}> check mime type </button> */}
-
-    <div className="card-container gap-sm width-100">
+    <div className="card-container gap-sm width-100 pl3 pr3">
           {
             metadata.map((item, index) => 
             <div 
             style={{ color:text1}} 
-            className="card-xl text-sm pointer"
+            className="card-xl"
             key={index}
             >
-              <img height="80%" width="80%" src={item.image} className={item.mime_type === "video" && "remove"}/>
-              <video controls height="80%" width="80%" src={item.image} className={item.mime_type === "image" && "remove"}/>
+              <img 
+                loading="lazy" 
+                style={{objectFit:"cover", cursor:"pointer"}}
+                quality={10}
+                height="80%" width="80%" 
+                src={item.image} 
+                className={item.mime_type === "video" && "remove"}
+              />
+              <iframe 
+                loading="lazy" 
+                controls="false"
+                style={{objectFit:"cover", padding:'0', border:"none", overflow:"hidden", cursor:"pointer"}}
+                height="80%" width="80%" 
+                src={item.image} 
+                className={item.mime_type === "image" && "remove"}
+              />
               <p>{item.name}</p>
               {/* <p>{item.description}</p> */}
             </div>

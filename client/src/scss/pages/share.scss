@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   width:100vw;
-  height:91vh;
+  // height:91vh;
   overflow:hidden;
 
   &-latest{
@@ -10,7 +10,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    height:33%;
+    height:33vh;
     width:100%;
     margin-top:1rem;
     outline:1px solid #999;
@@ -21,7 +21,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    height:33%;
+    height:33vh;
     width:100%;
   }
 
@@ -30,8 +30,8 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    height:34%;
+    // height:calc(100%-66vh);
     width:100%;
-    outline:1px solid #999;
+    // outline:1px solid #999;
   }
 }

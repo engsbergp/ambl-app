@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import * as GrIcons from 'react-icons/gr';
-import '../scss/utility/body.scss';
-import '../scss/utility/typography.scss';
 
 function About() {
 

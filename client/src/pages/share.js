@@ -10,7 +10,7 @@ function Share() {
   const { bg1, text1 } = useThemeStyles();
 
   return (
-    <div className="share active" style={{background:bg1, color:text1}}>
+    <div className="page" style={{background:bg1, color:text1}}>
         <ShareLatest/>
         <ShareTrending/>
         <ShareConnections/>

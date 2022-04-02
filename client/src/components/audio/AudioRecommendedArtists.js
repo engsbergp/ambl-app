@@ -9,7 +9,7 @@ export default function AudioRecommendedArtists() {
   
   return (
     <>
-      <p style={{color:text1}}>Recommended Artists</p>
+      <p className="ml4 mt1 mb1" style={{color:text1}}>Recommended Artists</p>
       <div className="card-container gap-sm">
         {recommendedArtists.map(recommended => 
           <div style={{background:card, color:text1}} className="card-md text-sm p1 pointer" key={recommended.id}>

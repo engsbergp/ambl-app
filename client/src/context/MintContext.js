@@ -1,5 +1,4 @@
 import React, { useContext, useState, useEffect } from "react";
-import { useMoralisFile } from "react-moralis";
 
 const MintDataContext = React.createContext();
 const MintFunctionContext = React.createContext();
@@ -13,9 +12,6 @@ export function useMintFunctions() {
 }
 
 export function MintProvider({ children }) {
-
-  //MORALIS STATES
-  const { saveFile } = useMoralisFile();  
   
   //LOCAL METADATA INPUTS
   const [ nftTitle, setNftTitle ] = useState('');
@@ -38,11 +34,7 @@ export function MintProvider({ children }) {
   const [ nftFileIpfsUrl, setNftFileIpfsUrl ] = useState('');
 
   //NFT METADATA ARRAY
-  const [ metadata, setMetadata ] = useState([])
-  
-  //TOKEN STATES
-  const TOKEN_CONTRACT_ADDRESS = "0x39369a8a00B9Be54eC6F820Aa38d1cCCda69fD6E";
-
+  const [ mintMetadata, setMintMetadata ] = useState([])
 
   //CREATION FLOW
   //image is uploaded locally
@@ -86,7 +78,7 @@ export function MintProvider({ children }) {
   ////for some reason I can't log state 
   ////immediately after changing it in an async moralis function 
   useEffect(() => {
-    setMetadata(
+    setMintMetadata(
       {
         name: nftTitle,
         description: nftDescription,
@@ -103,31 +95,10 @@ export function MintProvider({ children }) {
   //contains title, description, link, and attributes
   //keeping functions singular, separate, and process/flow oriented
   //this async function is called by another async function
-  const saveMetadataIpfs = async (f) => {
-    const file = await saveFile(
-      "file.json", 
-      {base64 : btoa(JSON.stringify({metadata}))}, 
-      {
-        type: "base64",
-        saveIPFS: true,
-      },
-    );
-    setNftFileIpfsUrl(file._ipfs);
-    setNftFileIpfsHash(file._hash);
-  }
+
+
 
   //called with the "mint" button is clicked
-  const createItem = async () => {
-    //check for required values
-    if (!nftTitle) return alert("please title");
-    if (!nftDescription) return alert("please description");
-    if (!nftIpfsUrl) return alert('please upload');
-
-    //metadata is set in useeffect
-    //upload metadata json to IPFS
-    //this is an async function calling another async function
-    await saveMetadataIpfs();
-  }
 
 
   //CLEANUP
@@ -157,7 +128,6 @@ export function MintProvider({ children }) {
         inputAttribute, setInputAttribute,
         nftIpfsHash, setNftIpfsHash,
         nftIpfsUrl, setNftIpfsUrl,
-        TOKEN_CONTRACT_ADDRESS
         // existingAbi, setExistingAbi, 
         // existingPermalink, setExistingPermalink, 
         // permalinkRadio, setPermalinkRadio, 
@@ -165,7 +135,6 @@ export function MintProvider({ children }) {
     }}>
       <MintFunctionContext.Provider
         value={{ 
-          createItem,
           addAttribute, 
       }}>
             { children }

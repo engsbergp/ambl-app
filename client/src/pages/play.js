@@ -11,9 +11,9 @@ function Play() {
   const { bg1, text1 } = useThemeStyles();
 
   return (
-    <div className="play active" style={{background:bg1, color:text1}}>
+    <div className="page" style={{background:bg1, color:text1}}>
       <PlayControls/>
-      <div className="play-body">
+      <div>
         <PlayBrowser/>
         <PlayBin/>
         <PlaySidebar/>

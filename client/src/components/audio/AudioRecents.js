@@ -10,8 +10,8 @@ export default function AudioRecents() {
 
   return (
     <>
-      <p style={{color:text1}} className="mt1">Recently Played</p>
-      <div className="card-container gap-sm width-100">
+      <p style={{color:text1}} className="ml4 mt1 mb1">Recently Played</p>
+      <div className="card-container width-100">
         {recentlyPlayed.map((recents, index) =>   
           <div 
             style={{background:card, color:text1}} 

@@ -1,6 +1,5 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import metadata from '../components/visual/metadata.json'
-// import { useMoralis } from "react-moralis";
 
 const AuthDataContext = React.createContext();
 const AuthFunctionsContext = React.createContext();
@@ -34,8 +33,6 @@ export function AuthProvider({ children }) {
   // const [currentAvatar, setCurrentAvatar] = useState("");
   // const [currentEthAddress, setCurrentEthAddress] = useState("");
 
-  //moralis states
-  // const { user } = useMoralis();
 
   //GET AND UPDATE USER INFO
   // useEffect(() => {
