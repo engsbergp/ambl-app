@@ -2,7 +2,7 @@
   "themes": 
     [
       {
-        "name": "greystyle",
+        "name": "grey-style",
         "creator": "phil",
         "styles": {
           "name":"greystyle",
@@ -10,7 +10,7 @@
           "bg2":"#555",
           "btn":"#777",
           "btnHover":"#656565",
-          "text1":"#bbb",
+          "text1":"#eee",
           "text1Active":"#eee",
           "text2":"#252525",
           "text2Active":"#151515",
@@ -48,7 +48,7 @@
           "btnHover":"#485987",
           "text1":"#F5F3F5",
           "text1Active":"#fff",
-          "text2":"141210",
+          "text2":"#141210",
           "text2Active":"#302B27",
           "scrollbar":"#F9F9F9",
           "scrollbarHover":"#F5F3F5",

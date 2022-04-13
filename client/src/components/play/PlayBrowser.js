@@ -1,12 +1,32 @@
-import React from 'react'
-import FullScreenPlay from '../misc/fullScreenPlay'
+import React, { useState } from 'react';
+import { useVisualData } from '../../context/VisualContext';
+import PlayControls from './PlayControls';
+import ReactPlayer from 'react-player'
 
-function PlayBrowser() {
+const PlayBrowser = () => {
+
+  const [isMuted, setIsMuted] = useState(true);
+
+  const { playVideoActive } = useVisualData();
+
+  const handleFullScreen = () => {
+    document.getElementById("player").requestFullscreen().catch(console.log)
+  }
+
   return (
     <div className="play-browser">
-      <p>play browser</p>
-      <FullScreenPlay/>
+      <ReactPlayer
+        url={playVideoActive}
+        playing={true} 
+        loop={true} 
+        muted={isMuted}
+        id="player" 
+        className="play-active-video" 
+        style={{maxHeight:"400px"}} 
+      />
+      <PlayControls isMuted={isMuted} setIsMuted={setIsMuted} handleFullScreen={handleFullScreen} />
     </div>
+    
   )
 }
 

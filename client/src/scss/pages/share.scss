@@ -1,37 +1,31 @@
 .share{
-  display: flex;
-  flex-direction: column;
-  width:100vw;
-  // height:91vh;
-  overflow:hidden;
-
-  &-latest{
+  &-instagram{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    height:33vh;
+    height:40%;
     width:100%;
     margin-top:1rem;
     outline:1px solid #999;
   }
 
-  &-trending{
+  &-twitter{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    height:33vh;
+    height:40%;
     width:100%;
   }
 
-  &-connections{
+  &-contact{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    // height:calc(100%-66vh);
+    height:10%;
     width:100%;
-    // outline:1px solid #999;
+    outline:1px solid #999;
   }
 }

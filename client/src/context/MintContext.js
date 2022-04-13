@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState } from "react";
 
 const MintDataContext = React.createContext();
 const MintFunctionContext = React.createContext();
@@ -28,13 +28,13 @@ export function MintProvider({ children }) {
   // const [ permalinkInputPlaceholder, setPermalinkInputPlaceholder ] = useState('none');
 
   //IMAGE METADATA
-  const [ nftIpfsHash, setNftIpfsHash ] = useState('');
-  const [ nftIpfsUrl, setNftIpfsUrl ] = useState('');
-  const [ nftFileIpfsHash, setNftFileIpfsHash ] = useState('');
-  const [ nftFileIpfsUrl, setNftFileIpfsUrl ] = useState('');
+  // const [ nftIpfsHash, setNftIpfsHash ] = useState('');
+  // const [ nftIpfsUrl, setNftIpfsUrl ] = useState('');
+  // const [ nftFileIpfsHash, setNftFileIpfsHash ] = useState('');
+  // const [ nftFileIpfsUrl, setNftFileIpfsUrl ] = useState('');
 
   //NFT METADATA ARRAY
-  const [ mintMetadata, setMintMetadata ] = useState([])
+  // const [ mintMetadata, setMintMetadata ] = useState([])
 
   //CREATION FLOW
   //image is uploaded locally
@@ -77,17 +77,17 @@ export function MintProvider({ children }) {
   //needed to prevent data from falling behind
   ////for some reason I can't log state 
   ////immediately after changing it in an async moralis function 
-  useEffect(() => {
-    setMintMetadata(
-      {
-        name: nftTitle,
-        description: nftDescription,
-        nftFilePath: nftIpfsUrl,
-        nftFileHash: nftIpfsHash,
-        attributes: nftAttributes,
-      }
-    );
-  }, [nftTitle, nftDescription, nftIpfsUrl, nftIpfsHash, nftAttributes])
+  // useEffect(() => {
+  //   setMintMetadata(
+  //     {
+  //       name: nftTitle,
+  //       description: nftDescription,
+  //       nftFilePath: nftIpfsUrl,
+  //       nftFileHash: nftIpfsHash,
+  //       attributes: nftAttributes,
+  //     }
+  //   );
+  // }, [nftTitle, nftDescription, nftIpfsUrl, nftIpfsHash, nftAttributes])
 
 
   //save metadata file to IPFS 
@@ -126,8 +126,8 @@ export function MintProvider({ children }) {
         nftAttributes, setNftAttributes, 
         inputValue, setInputValue,
         inputAttribute, setInputAttribute,
-        nftIpfsHash, setNftIpfsHash,
-        nftIpfsUrl, setNftIpfsUrl,
+        // nftIpfsHash, setNftIpfsHash,
+        // nftIpfsUrl, setNftIpfsUrl,
         // existingAbi, setExistingAbi, 
         // existingPermalink, setExistingPermalink, 
         // permalinkRadio, setPermalinkRadio, 

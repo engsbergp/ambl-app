@@ -18,23 +18,31 @@ export function SpotifyProvider( {children} ) {
   const [expiresIn, setExpiresIn] = useState();
 
 
+  const [ isFooter, setIsFooter ] = useState(false);
+
+
   //retrieves spotify code from URL
   //returns json file with token data
   //post to server port 8080
   //set global access to auth, refresh, and expiration
   useEffect(() => {
-    axios.post(`http://localhost:8080/login`, {
+    axios.post(`http://192.168.1.12/login`, {
       code,
     }).then(res => {
       setAccessToken(res.data.accessToken);
       setRefreshToken(res.data.refreshToken);
       setExpiresIn(res.data.expiresIn);
-
+      
       //removes token from URL
       window.history.pushState({}, null, "/")
     }).catch(() => {
     })
   }, [code])
+  
+  useEffect(() => {
+    if (!code) return;
+    setIsFooter(true);
+  },[code])
 
 
   //uses refresh token to reset the expiration timer
@@ -43,12 +51,12 @@ export function SpotifyProvider( {children} ) {
 
     //reset access token every 59 minutes
     const interval = setInterval(() => {
-      axios.post(`http://localhost:8080/refresh`, {
+      axios.post(`http://192.168.1.12/refresh`, {
         refreshToken,
       }).then(res => {
         setAccessToken(res.data.accessToken);
         setExpiresIn(res.data.expiresIn);
-        console.log(res.data)
+        // console.log(res.data)
       }).catch(() => {
         // window.location = '/'
       })
@@ -60,7 +68,7 @@ export function SpotifyProvider( {children} ) {
 
 
   return(
-    <SpotifyTokenContext.Provider value={{ code, accessToken, refreshToken, expiresIn }}>
+    <SpotifyTokenContext.Provider value={{ code, accessToken, refreshToken, expiresIn, isFooter, setIsFooter }}>
       { children }
     </SpotifyTokenContext.Provider>
   )

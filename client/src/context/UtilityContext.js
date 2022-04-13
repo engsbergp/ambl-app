@@ -9,10 +9,12 @@ export function useFooterNav() {
 export function UtilityProvider({ children }) {
 
   const [ footerMenuActive, setFooterMenuActive ] = useState('audio')
-  
 
   return(
-    <FooterNavContext.Provider value={{ footerMenuActive, setFooterMenuActive }}>
+    <FooterNavContext.Provider 
+      value={{ 
+        footerMenuActive, setFooterMenuActive
+      }}>
         {children}
     </FooterNavContext.Provider>
   )

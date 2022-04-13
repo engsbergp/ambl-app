@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext } from "react";
 
 const ThemeContext = React.createContext();
 const StyleContext = React.createContext();
@@ -13,35 +13,35 @@ export function useThemeStyles() {
 
 export function ThemeProvider({ children }) {
   
-  const [ activeTheme, setActiveTheme ] = useState(['']);
-  const [ themeName, setThemeName ] = useState('');
-  const [ bg1, setBg1 ] = useState('');
-  const [ bg2, setBg2 ] = useState('');
-  const [ btn, setBtn ] = useState('');
-  const [ btnHover, setBtnHover ] = useState('');
-  const [ text1, setText1 ] = useState('');
-  const [ text1Active, setText1Active ] = useState('');
-  const [ text2, setText2 ] = useState('');
-  const [ text2Active, setText2Active ] = useState('');
-  const [ scrollbar, setScrollbar ] = useState('');
-  const [ scrollbarHover, setScrollbarHover ] = useState('');
-  const [ card, setCard ] = useState('');
-
-  useEffect( () => {
-    setThemeName('light mode');
-    setBg1('#E1E5F2');
-    setBg2('#D6DCFF');
-    setBtn('#BFDBF7');
-    setBtnHover('#8EAECE');
-    setText1('#011118');
-    setText1Active('#02202A');
-    setText2('#FFF');
-    setText2Active('#AAA');
-    setScrollbar('#CED1DD');
-    setScrollbarHover('#DEDFE2');
-    setCard('#C6E3FF');
-  }, [])
-
+  const [ activeTheme, setActiveTheme ] = useState(
+    {
+      bg1: "#1B264F",
+      bg2: "#274690",
+      btn: "#576CA8",
+      btnHover: "#485987",
+      card: "#111831",
+      name: "dark mode",
+      scrollbar: "#F9F9F9",
+      scrollbarHover: "#F5F3F5",
+      text1: "#F5F3F5",
+      text1Active: "#fff",
+      text2: "#141210",
+      text2Active: "#302B27"
+    }
+    );
+  
+  const [ themeName, setThemeName ] = useState('dark mode');
+  const [ bg1, setBg1 ] = useState('#1B264F');
+  const [ bg2, setBg2 ] = useState('#274690');
+  const [ btn, setBtn ] = useState('#576CA8');
+  const [ btnHover, setBtnHover ] = useState('#485987');
+  const [ text1, setText1 ] = useState('#F5F3F5');
+  const [ text1Active, setText1Active ] = useState('#fff');
+  const [ text2, setText2 ] = useState('#141210');
+  const [ text2Active, setText2Active ] = useState('#302B27');
+  const [ scrollbar, setScrollbar ] = useState('#F9F9F9');
+  const [ scrollbarHover, setScrollbarHover ] = useState('#F5F3F5');
+  const [ card, setCard ] = useState('#111831');
 
   return(
     <ThemeContext.Provider value={{ activeTheme, setActiveTheme }}>

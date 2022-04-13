@@ -15,21 +15,22 @@ function FooterControls() {
 
   useEffect(() => setPlay(true), [trackUri])
 
-  if (!trackUri) return null;
+  if (!accessToken) return null;
   return (
-    <div className='col30 gap1'>
+    <div className='col80 gap1'>
 
       <SpotifyPlayer 
+        id="spotifyPlayer"
         token={ accessToken }
         showSaveIcon
         callback={state => {
           if (!state.isPlaying) setPlay(false);
+          console.log(state);
         }}
         play={play}
         uris={ trackUri ? [trackUri] : [] }
-        styles={{ bgColor:bg1, color:text1, trackNameColor:text1, trackArtistColor:text1 }}
+        styles={{ height:"2.75rem", bgColor:bg1, color:text1, trackNameColor:text1, trackArtistColor:text1 }}
       />
-
     </div>
   )
 }

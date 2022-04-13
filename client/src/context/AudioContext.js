@@ -79,6 +79,7 @@ export function AudioProvider({ children }) {
 
   //PLAYER
   const [ trackPlaying, setTrackPlaying ] = useState('');
+  const [ playerId, setPlayerId ] = useState('');
 
   // FUNCTIONS
   // const [ selectedTrackId, setSelectedTrackId ] = useState('');
@@ -255,7 +256,8 @@ export function AudioProvider({ children }) {
           trackPlaying, setTrackPlaying,
           recentUri, setRecentUri,
           searchUri, setSearchUri,
-          trackUri, setTrackUri 
+          trackUri, setTrackUri,
+          playerId, setPlayerId 
       }}>
         <SpotifySearchContext.Provider 
           value={{ 

@@ -5,6 +5,7 @@ import { themes } from '../../scss/colors/themes.json';
 export default function Themes(props) {
 
   const { activeTheme, setActiveTheme } = useActiveTheme();
+  
   const { setBg1, 
           setBg2, 
           setBtn, 
@@ -21,6 +22,7 @@ export default function Themes(props) {
         } = useThemeStyles();
   
   useEffect( () => {
+    console.log(activeTheme)
     setBg1( activeTheme.bg1 );
     setBg2( activeTheme.bg2 );
     setBtn ( activeTheme.btn );
@@ -46,7 +48,7 @@ export default function Themes(props) {
         setScrollbarHover,
         setCard,
         setThemeName  
-      ])
+      ], [activeTheme])
 
   return (
     <>
@@ -56,7 +58,7 @@ export default function Themes(props) {
             key={index}
             onClick={() => setActiveTheme( themes.styles )} 
           >
-            <p key={index} style={{color:themes.styles.text1}}> {themes.name} </p>  
+            <p key={index} style={{color:themes.styles.text1, cursor:"pointer"}}> {themes.name} </p>  
           </button>           
       )}
     </>

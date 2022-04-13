@@ -9,8 +9,55 @@
   opacity:0;
 }
 
+.block{
+  display:block;
+}
+
 .ellipsis{
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+}
+
+.confirm-copy:active{
+  transform:scale(.9);
+  opacity:0.5;
+  transition:.05s;
+}
+
+.confirm-copy:not(:active){
+  transition:0.1s;
+}
+
+.hover{
+  
+  &-larger:hover{
+    transition: ease-in-out .1s;
+    transform: scale(1.1)
+  }
+}
+
+.full-screen-home{
+  display:flex;
+  position:absolute;
+  transform:scale(3);
+  color:#999;
+  opacity:.8;
+  bottom:2.75rem;
+  left:2rem;
+  transition: .25s;
+}
+
+.full-screen-home:hover{
+  color:#eee;
+}
+
+@media (max-width:560px){
+  .full-screen-home{
+    display:none;
+  }
+  .full-screen-play{
+    display: none;
+  }
+
 }

@@ -7,13 +7,14 @@ const SpotifyWebApi = require('spotify-web-api-node');
 require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT || 8080;
+// const PORT = process.env.PORT || 80;
 
 app.use(cors());
 app.use(bodyParser.json());
 
 
-// app.use(express.static(path.join(__dirname, "client", "build")));
+app.use(express.static(path.join(__dirname, "client", "build")));
+
 
 //retrieve initial auth token, refresh token, and session expiration
 
@@ -26,7 +27,7 @@ app.post('/login', (req, res) => {
     // clientId: process.env.REACT_APP_SPOTIFY_CLIENT_ID,
     // clientSecret: process.env.REACT_APP_SPOTIFY_CLIENT_SECRET,
 
-    redirectUri: 'http://localhost:3000',
+    redirectUri: 'http://192.168.1.12',
     clientId: process.env.DEV_REACT_APP_SPOTIFY_CLIENT_ID,
     clientSecret: process.env.DEV_REACT_APP_SPOTIFY_CLIENT_SECRET,
   })
@@ -59,7 +60,7 @@ app.post('/refresh', (req, res) => {
     // clientId: process.env.REACT_APP_SPOTIFY_CLIENT_ID,
     // clientSecret: process.env.REACT_APP_SPOTIFY_CLIENT_SECRET,
 
-    redirectUri: 'http://localhost:3000',
+    redirectUri: 'http://192.168.1.12',
     clientId: process.env.DEV_REACT_APP_SPOTIFY_CLIENT_ID,
     clientSecret: process.env.DEV_REACT_APP_SPOTIFY_CLIENT_SECRET,
 
@@ -81,13 +82,12 @@ app.post('/refresh', (req, res) => {
     })
   })
 
-
   // app.post('/userNft', (req, res) => {
 
   // })
 
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('client/build'))
-}
+// if (process.env.NODE_ENV === 'production') {
+//   app.use(express.static('client/build'))
+// }
 
 app.listen(PORT, console.log(`Server is Listening at ${PORT}`))

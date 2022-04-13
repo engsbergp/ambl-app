@@ -1,49 +1,105 @@
 [
   {
+    "name": "Impeccable",
+    "description": "the sun swept current\nkept us apart for so long\nwe had neither energy nor time\nto love each other in ways \nour youth had dreamed\n\nso we fell into each others arms\nand pretended that we could fly\n\nFebruary 12th, 2022 / Santa Cruz Island, Santa Barbara, CA / Infrared Photography",
+    "external_url": "https://foundation.app/@ambl/landscapes/3",
+    "image": "https://res.cloudinary.com/ambl-io/image/upload/v1648857018/ambl/220214_LA_IR_WEB_REPRINT-1_bisqtw.jpg",
+    "mime_type":"image"
+  },
+  {
+    "name": "New Hearts",
+    "external_url": "https://foundation.app/@ambl/landscapes/2",
+    "description": "let my heart be worn soft\nlike denim tumbled across the sky\nforgetting its place \namongst rapture and worry\n\na prayer for the new wake\nof cataclysmic souls\nstretching mind and love\nacross placeless galaxies\nthrough indescribable visions\nturning without time or thought\n\nFebruary 11th, 2022 / Santa Cruz Island, Santa Barbara, CA / Infrared Photography",
+    "image": "https://res.cloudinary.com/ambl-io/image/upload/v1648857017/ambl/220211-LA-WEB-7_w9iapj.jpg",
+    "mime_type":"image"
+  },
+  {
+    "name": "We Walk",
+    "external_url": "https://foundation.app/@ambl/landscapes/1",
+    "description": "melt my courage into madness\nsitting in the comforts of yesterday\nchurning through morality and novelty\n\nfoot over heel, ankle over elbow\nmind over matter, though\nwhat seems to matter\nis never on my mind\n\nFebruary 11th, 2022 / Santa Cruz Island, Santa Barbara, CA / Infrared Photography",
+    "image": "https://res.cloudinary.com/ambl-io/image/upload/v1648857017/ambl/220211-LA-WEB-6_hkzc9v.jpg",
+    "mime_type":"image"
+  },
+  {
     "description": "Taken at Hopewell Valley Vineyards in Pennington, NJ. June 2020. Modified Canon T2i with 590nm supercolor infrared filter.",
     "external_url": "https://app.rarible.com/token/0xd07dc4262bcdbf85190c01c996b4c06a461d2430:91230",
-    "image": "https://ipfs.moralis.io:2053/ipfs/QmWfWYpL3Wq6WXVjWnqjckQpussSuarLEVxPrdjzwMaRax/image.jpeg",
+    "image": "https://ipfs.io/ipfs/QmWfWYpL3Wq6WXVjWnqjckQpussSuarLEVxPrdjzwMaRax/image.jpeg",
     "name": "Letters From Home 3",
     "mime_type":"image"
   },
   {
-    "description": "I'm only in town for a couple of days\ndo you mind if I plug in my laptop\nand take a video of my latte?\n\nUptown Espresso / Seattle, Washington / September 15th",
-    "external_uri": "https://zora.co/collections/zora/7796",
-    "image": "https://ipfs.moralis.io:2053/ipfs/bafybeifkjno7kiwwtonrlu37zxj6lbsyfvgfqckfnmulwe6n5bmq5cobba",
-    "name": "Everyone's Business",
+    "description": "patience is\nonly asking for my coffee once\n\ntrust is\nbelieving I have already asked for my coffee\n \n\nFairgrounds Coffee / Milwaukee, Wisconsin / March 7th, 2022 / 1600x1290",
+    "external_url": "https://foundation.app/@ambl/coffee/2",
+    "image": "https://ipfs.io/ipfs/QmTKD2a54aFa1Wo7TSMoJSRhUYZGNpFAR1itu46c6fq6kz/nft.mp4",
+    "name": "The Waiting Game",
     "mime_type":"video"
   },
   {
     "description": "Taken at Hopewell Valley Vineyards in Pennington, NJ. June 2020. Modified Canon T2i with 590nm supercolor infrared filter.",
     "external_url": "https://app.rarible.com/token/0xd07dc4262bcdbf85190c01c996b4c06a461d2430:91228",
-    "image": "https://ipfs.moralis.io:2053/ipfs/QmY1DokEQKaXRePvME2fddKBWNDfckpfTdJpF1NTUdm85c/image.jpeg",
+    "image": "https://ipfs.io/ipfs/QmY1DokEQKaXRePvME2fddKBWNDfckpfTdJpF1NTUdm85c/image.jpeg",
     "name": "Letters From Home 2",
     "mime_type":"image"
   },
   {
     "description": "Taken at Hopewell Valley Vineyards in Pennington, NJ. June 2020. Modified Canon T2i with 590nm supercolor infrared filter.",
     "external_url": "https://app.rarible.com/token/0xd07dc4262bcdbf85190c01c996b4c06a461d2430:91225",
-    "image": "https://ipfs.moralis.io:2053/ipfs/QmTYX3kGfmrcVJcqAtCbQ6C9ngibcbqBAnud1hAJJwQaRN/image.jpeg",
+    "image": "https://ipfs.io/ipfs/QmTYX3kGfmrcVJcqAtCbQ6C9ngibcbqBAnud1hAJJwQaRN/image.jpeg",
     "name": "Letters From Home 1",
     "mime_type":"image"
   },
   {
+    "description": "we were late to the party\nand dreamed it to be so\n\nthe saturday night crowd\nis different than I remember\n\nfilmed on august 15th, 2020 at radio city music hall, in new york city.\ndimensions are 3240x2160",
+    "external_url": "https://zora.co/collections/zora/896",
+    "image": "https://ipfs.io/ipfs/bafybeietbca7l5bs3mxi74dnpvatxrzx5shcejizzz6ck2ol3ui6l2q2g4",
+    "name": "Ghost City",
+    "mime_type":"video"
+  },
+  {
     "description": "why settle for fifteen minutes\n\nFebruary 26th, 2021 - Shaverstown, PA\n1600x1200 / H264 / 50mbps / 24p ",
-    "external_uri": "https://ephimera.com/account/0x4f5e28C786f209620A35d334a7280ef33DeB0018",
-    "image": "https://ipfs.moralis.io:2053/ipfs/QmWNpNokiUwx6eDX4mALoX4tnGR1mUHJttGzj35LSDE549",
+    "external_url": "https://ephimera.com/account/0x4f5e28C786f209620A35d334a7280ef33DeB0018",
+    "image": "https://ipfs.io/ipfs/QmWNpNokiUwx6eDX4mALoX4tnGR1mUHJttGzj35LSDE549",
     "name": "Survival of the Fittest",
+    "mime_type":"image"
+  },
+  {
+    "description": "I'm only in town for a couple of days\ndo you mind if I plug in my laptop\nand take a video of my latte?\n\nUptown Espresso / Seattle, Washington / September 15th",
+    "external_url": "https://zora.co/collections/zora/7796",
+    "image": "https://ipfs.io/ipfs/bafybeifkjno7kiwwtonrlu37zxj6lbsyfvgfqckfnmulwe6n5bmq5cobba",
+    "name": "Everyone's Business",
+    "mime_type":"video"
+  },
+  {
+    "description": "walk lightly\nmore than your feet could get burned\n\nnot currently listed ",
+    "external_url": "https://linktr.ee/ambientlandscapes",
+    "image": "https://res.cloudinary.com/ambl-io/image/upload/v1649820998/ambl/coalsGif_je6ily.gif",
+    "name": "Coals",
     "mime_type":"image"
   },
   {
     "description": "Taken at Pequest Union Cemetary in Independance Township, NJ. October 2020. Modified Canon T2i with 720nm deep infrared filter. ",
     "external_url": "https://app.rarible.com/token/0xd07dc4262bcdbf85190c01c996b4c06a461d2430:91215",
-    "image": "https://ipfs.moralis.io:2053/ipfs/QmX3BTC6LwjnNvS1XMeDmYoSTfuUGdgtjJcYnPADw7J8vA/image.png",
+    "image": "https://ipfs.io/ipfs/QmX3BTC6LwjnNvS1XMeDmYoSTfuUGdgtjJcYnPADw7J8vA/image.png",
     "name": "A Walk to Remember",
     "mime_type":"image"
   },
   {
+    "description": "leaving nothing to stand\nbut the thunderous roar\nof the falls on your chest\nlike a bomb on the floor\n\nfilmed at Ricketts Glen State Par in Benton, PA on February 26th, 2021",
+    "external_url": "https://zora.co/collections/zora/1812",
+    "image": "https://ipfs.io/ipfs/bafybeicvnmxqsqn4n7pn6mcajibcgkiqyjq43s455y4q4oujurp22hqj2a",
+    "name": "Eye of the Beholder",
+    "mime_type":"video"
+  },
+  {
+    "description": "you don't have to go anywhere you don't want to go\n\n not currently listed",
+    "external_url": "https://linktr.ee/ambientlandscapes",
+    "image": "https://res.cloudinary.com/ambl-io/video/upload/v1649821000/ambl/ghostcarsMp4_d4yjkl.mp4",
+    "name": "Ghost Ranch",
+    "mime_type":"video"
+  },
+  {
     "description": "saintly shadows \noverhang legends and cliffs \nfondly remind my tattered soul \nand blistering feet\nof the ever-present golden moments\nsilently cheering the world \nto peaceful victory\n\nInfrared Photography / Modified Canon T2i / 590nm  / 24mm / f22 / 1/30s / ISO 100 / JPEG  4750 x 3393",
-    "external_url": "undefined/my-market/0x6e8370e2cf7ebed101894e3fc703bb43baaa4761",
+    "external_url": "https://eth.mintbase.io/pez-dispenser/0x6e8370e2cf7ebed101894e3fc703bb43baaa4761/LYkn4nME_o6Am7el1XssCYUAukdaa4Ax_WkTk2bWmFs",
     "image": "https://res.cloudinary.com/ambl-io/image/upload/v1648857014/ambl/220211-LA-WEB-4_weglmg.jpg",
     "name": "Church Bells",
     "mime_type":"image"
@@ -51,20 +107,34 @@
   {
     "description": "Black Forest Trail in Slate Run, PA. November 2020\n\nTaken with Panasonic gh4",
     "external_url": "https://app.rarible.com/token/0x60f80121c31a0d46b5279700f9df786054aa5ee5:88620",
-    "image": "https://ipfs.moralis.io:2053/ipfs/QmcbHa2yV9wU2wnMYdmrQ2DzcPJom2aL18tvHTPgf8oS6U/image.png",
+    "image": "https://ipfs.io/ipfs/QmcbHa2yV9wU2wnMYdmrQ2DzcPJom2aL18tvHTPgf8oS6U/image.png",
     "name": "Black Forest ",
     "mime_type":"image"
   },
   {
+    "description": " give it one last deep breath\nthe wind will take you somewhere\nand you might miss where you're standing right now \n\nnot currently for sale",
+    "external_url": "https://linktr.ee/ambientlandscapes",
+    "image": "https://res.cloudinary.com/ambl-io/video/upload/v1649821008/ambl/mistMp4_fiyovo.mp4",
+    "name": "Cascades",
+    "mime_type":"video"
+  },
+  {
     "description": "saviors remembered\nas melodies sketched on paper\nreflective and reflexive\nsounds of fleeting time\nhonesty turning it's own fashion\n\n\nJPEG  |  3456 x 4838",
-    "external_url": "undefined/my-market/0x6e8370e2cf7ebed101894e3fc703bb43baaa4761",
+    "external_url": "https://eth.mintbase.io/pez-dispenser/0x6e8370e2cf7ebed101894e3fc703bb43baaa4761/9XbRKZgkTWAkTjBaeiW1jxVuBtuWec34cJv5qQb-yUM",
     "image": "https://res.cloudinary.com/ambl-io/image/upload/v1638226025/ambl/IR-211026-4_yhpkje.jpg",
     "name": "Meteoric",
     "mime_type":"image"
   },
   {
+    "description": "legend says the second cup \nwill give you wings\nso I blew out the candles \nand wished I could breath fire too\n\nfilmed on january 24th, 2021 at snapdragon coffee, in jersey city. dimensions are 1350x1080\n\nproduced by brainorchestra. mixed by phile",
+    "external_url": "https://zora.co/collections/zora/1302",
+    "image": "https://ipfs.io/ipfs/bafybeihy7jv35lhtf5zkj2bhzvqe7nh6np4klkqz3lem5gmc7zosm7sj7i",
+    "name": "Dragons",
+    "mime_type":"video"
+  },
+  {
     "description": "solitude gifted from little boxes in the sky \nselling fortune and good vibes \nto whoever has a few minutes of patience\n - or enough coffee to get through the conversation. \n(not sure what I’d rather have: patience or coffee.\nespecially when I’ve forgotten what you’re talking about) - \n\ndon't be a stranger now. \nshare your opinion, \neven if it's boring, and you don't know what you're talking about. \npeople like that kind of stuff, \nor at least they sometimes act that way.\n\nThe bluffs at Devils Lake in Baraboo Wisconsin remind me of my childhood. We would go backpacking there once a year, until us kids got too old for family. It always felt like this mythical, far off place. The preparation and the travel truly  being the most exciting part of the journey - turns out it's only an hour drive from where we grew up - Revisiting the old memories with new eyes and grown perspectives. The world often feels much smaller than I remember, however I remember it. I didn't plan on reevaluating my place in the universe this weekend, even if I asked nicely.\n\nInfrared Photography  / Modified Canon T2i / Kolari Vision 590nm IR filter / 24mm / f6.7 / 1/180s / ISO 100",
-    "external_url": "undefined/my-market/0x6e8370e2cf7ebed101894e3fc703bb43baaa4761",
+    "external_url": "https://eth.mintbase.io/pez-dispenser/0x6e8370e2cf7ebed101894e3fc703bb43baaa4761/Fxlxswn8HXXkY1-wF6XukGAX7lI5d7sZkjOjDuOQLuA",
     "image": "https://res.cloudinary.com/ambl-io/image/upload/v1638226037/ambl/IR-211026-6_ewae9v.jpg",
     "name": "A Life in the Game",
     "mime_type":"image"
@@ -79,14 +149,14 @@
   {
     "description": "a portrait of new york city during the covid19 pandemic\n\nwe stood and watched \nwhile soho lay dreaming\nstreets filled with people like sand\nfalling through your fingertips\nleaving as quietly as they came\n\naugust 15th, 2020 / 3240x2160 / mp4",
     "external_uri": "https://zora.co/collections/zora/2753",
-    "image": "https://ipfs.moralis.io:2053/ipfs/bafybeieevaxakvher44ng42tl3l6i5krzrhcvy3tdbc7ehrmrqnl2m7ftm",
+    "image": "https://ipfs.io/ipfs/bafybeieevaxakvher44ng42tl3l6i5krzrhcvy3tdbc7ehrmrqnl2m7ftm",
     "name": "Fulton and Gold",
     "mime_type":"video"
   },
   {
     "description": "go ahead\nsplash around\njust leave some fish\nfor the rest of us\n\nBoonton Coffee / Boonton, NJ / January 20th, 2021 / 1440x1080",
-    "external_uri": "https://zora.co/collections/zora/6215",
-    "image": "https://ipfs.moralis.io:2053/ipfs/bafybeigbbcqrl7fatxvywbv3gghspdyjutcpls44don2q4d3mi4hmyl2j4",
+    "external_url": "https://zora.co/collections/zora/6215",
+    "image": "https://ipfs.io/ipfs/bafybeigbbcqrl7fatxvywbv3gghspdyjutcpls44don2q4d3mi4hmyl2j4",
     "name": "Whales Like Coffee",
     "mime_type":"video"
   },
@@ -98,57 +168,57 @@
     "mime_type":"image"
   },
   {
-    "description": "an infrared photograph of NYC during the COVID-19 pandemic\n\nonce nostalgic bar-close-vomit\nreplaced with the soothing buzz of traffic lights\nthe city that never sleeps \nfinally has a chance to\n\"shut the fuck up\nand get a good night's rest\"\nor at least that's what i'm told\n\ntaken august 21st, 2020 sometime after midnight / png / 5184 x 3456 / canon t2i internal 590nm infrared modification / unedited + bonus in vision board ",
-    "external_uri": "https://ephimera.com/account/0x4f5e28C786f209620A35d334a7280ef33DeB0018",
-    "image": "https://res.cloudinary.com/ambl-io/image/upload/v1638226029/ambl/roxy_omeq5l.jpg",
-    "name": "A Night on the Town",
-    "mime_type":"image"
-  },
-  {
     "description": "our grandkids will ask \nhow we use to call it lo-fi\n\npretty bird coffee in yardley, PA / feb. 3rd 2021 / music by Jon Evers / 5d iii -> JVC-XVC25U / 30p / H264 / 960x720",
-    "external_uri": "https://zora.co/collections/zora/2309",
-    "image": "https://ipfs.moralis.io:2053/ipfs/bafybeid6k6xg7yc5cgzhwti4bnucwb6cmznkwskyvnbvuprzisxnecqj3a",
+    "external_url": "https://zora.co/collections/zora/2309",
+    "image": "https://ipfs.io/ipfs/bafybeid6k6xg7yc5cgzhwti4bnucwb6cmznkwskyvnbvuprzisxnecqj3a",
     "name": "Cold Brew",
     "mime_type":"video"
   },
   {
     "description": "Filmed March 2nd, 2021 in Boonton, New Jersey.\nDimensions are 1600x1200",
-    "external_uri": "https://zora.co/collections/zora/1356",
-    "image": "https://ipfs.moralis.io:2053/ipfs/bafybeicoekn2b27q3jozr6j2x6ibp2x2mb5zzbhhvqeznaprggswi4oooa",
+    "external_url": "https://zora.co/collections/zora/1356",
+    "image": "https://ipfs.io/ipfs/bafybeicoekn2b27q3jozr6j2x6ibp2x2mb5zzbhhvqeznaprggswi4oooa",
     "name": "Yule Log NFT",
     "mime_type":"video"
   },
   {
     "description": "somewhere between love and attention\nmy senses lost their place in time\nlike chocolate melting in the wind\nwe stood between these twisted railways\nand dreamed our lives as they were told to us\n\nDevils Lake State Park  |  Baraboo, Wisconsin\nOctober 25th, 2021  | JPEG 3456 x 4838",
-    "external_uri": "https://ephimera.com/account/0x4f5e28C786f209620A35d334a7280ef33DeB0018",
+    "external_url": "https://ephimera.com/account/0x4f5e28C786f209620A35d334a7280ef33DeB0018",
     "image": "https://res.cloudinary.com/ambl-io/image/upload/v1638226016/ambl/IR-211026-3_mtoppu.jpg",
     "name": "Perpetual Motion",
     "mime_type":"image"
   },
   {
+    "description": "caution to travelers\ndown on their luck\nsome kind of monster\nmight gobble you up\n\nFebruary 26th, 2021 - Shaverstown, PA \nInfrared 590nm / 5184 x 3456",
+    "external_url": "https://ephimera.com/account/0x4f5e28C786f209620A35d334a7280ef33DeB0018",
+    "image": "https://res.cloudinary.com/ambl-io/image/upload/v1648857395/ambl/barns_to_ig_210316-2_uvrwu9.jpg",
+    "name": "Where the Wild Things Are",
+    "mime_type":"image"
+  },
+  {
     "description": "an infrared photograph of NYC during the COVID-19 pandemic\n\nit'd be great if we could get home soon\nif I could only remember where we lived\n\ntaken august 21st, 2020 sometime after midnight / png / 5185 x 3456 / canon t2i internal 590nm infrared modification / unedited + bonus in vision board ",
-    "external_uri": "https://ephimera.com/account/0x4f5e28C786f209620A35d334a7280ef33DeB0018",
+    "external_url": "https://ephimera.com/account/0x4f5e28C786f209620A35d334a7280ef33DeB0018",
     "image": "https://res.cloudinary.com/ambl-io/image/upload/v1638226014/ambl/NYC-IR_200824_4_vakt3d.jpg",
     "name": "Time for a Cab",
     "mime_type":"image"
   },
   {
     "description": "an infrared photograph of NYC during the COVID-19 pandemic\n\nshill me your best covid art\nit's friday night, and the streets are bumping\ndamn if we don't walk out of this like rich men\n\ntaken august 21st, 2020 sometime after midnight / png / 5080 x 3387 / canon t2i internal 590nm infrared modification / unedited + bonus in vision board ",
-    "external_uri": "https://ephimera.com/account/0x4f5e28C786f209620A35d334a7280ef33DeB0018",
+    "external_url": "https://ephimera.com/account/0x4f5e28C786f209620A35d334a7280ef33DeB0018",
     "image": "https://res.cloudinary.com/ambl-io/image/upload/v1638226015/ambl/NYC-IR_200824_2_xcecwq.jpg",
     "name": "Wall Street Bets",
     "mime_type":"image"
   },
   {
-    "description": "caution to travelers\ndown on their luck\nsome kind of monster\nmight gobble you up\n\nFebruary 26th, 2021 - Shaverstown, PA \nInfrared 590nm / 5184 x 3456",
-    "external_uri": "https://ephimera.com/account/0x4f5e28C786f209620A35d334a7280ef33DeB0018",
-    "image": "https://res.cloudinary.com/ambl-io/image/upload/v1648857395/ambl/barns_to_ig_210316-2_uvrwu9.jpg",
-    "name": "Where the Wild Things Are",
+    "description": "an infrared photograph of NYC during the COVID-19 pandemic\n\nonce nostalgic bar-close-vomit\nreplaced with the soothing buzz of traffic lights\nthe city that never sleeps \nfinally has a chance to\n\"shut the fuck up\nand get a good night's rest\"\nor at least that's what i'm told\n\ntaken august 21st, 2020 sometime after midnight / png / 5184 x 3456 / canon t2i internal 590nm infrared modification / unedited + bonus in vision board ",
+    "external_url": "https://ephimera.com/account/0x4f5e28C786f209620A35d334a7280ef33DeB0018",
+    "image": "https://res.cloudinary.com/ambl-io/image/upload/v1638226029/ambl/roxy_omeq5l.jpg",
+    "name": "A Night on the Town",
     "mime_type":"image"
   },
   {
     "description": "symmetry is the foundation\nof any lasting relationship\n\nFebruary 26th, 2021 - Shaverstown, PA\nDimensions are 5120 x 3840",
-    "external_uri": "https://ephimera.com/account/0x4f5e28C786f209620A35d334a7280ef33DeB0018",
+    "external_url": "https://ephimera.com/account/0x4f5e28C786f209620A35d334a7280ef33DeB0018",
     "image": "https://res.cloudinary.com/ambl-io/image/upload/v1648857396/ambl/barns_to_ig_210316-1_ofem3b.jpg",
     "name": "From Heaven Above",
     "mime_type":"image"

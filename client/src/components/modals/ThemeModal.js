@@ -11,7 +11,7 @@ export default function ThemeModal() {
   const { toggleThemeModal, toggleUserProfileModal } = useToggleModal();
 
   //theme states
-  const { bg2, text1, btn } = useThemeStyles();
+  const { bg2, text1, btn, text1Active } = useThemeStyles();
 
   function cancel() {
     toggleThemeModal();
@@ -42,7 +42,7 @@ export default function ThemeModal() {
             </button>
           </div>
 
-      <button onClick={ toggleThemeModal } className="btn-icon-circle close-button">
+      <button style={{color:text1Active}} onClick={ toggleThemeModal } className="btn-icon-circle close-button">
         <FaIcons.FaPlus className="rotate90"/>
       </button>
     </div>,

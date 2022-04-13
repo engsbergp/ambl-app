@@ -1,8 +1,8 @@
 import { React, useState } from 'react';
 import ExploreAudioResults from '../components/explore/ExploreAudioResults';
-import ExploreVisualResults from '../components/explore/ExploreVisualResults';
-import { useThemeStyles } from '../context/ThemeContext'
-import '../scss/pages/explore.scss';
+import { useThemeStyles } from '../context/ThemeContext';
+import { useSpotifyTokens } from '../context/SpotifyContext';
+import VisualAllNfts from '../components/visual/VisualAllNfts'
 
 function Explore() {
 
@@ -10,8 +10,10 @@ function Explore() {
 
   const [ explore, setExplore ] = useState("video");
 
+  const { isFooter } = useSpotifyTokens();
+
   return (
-  <div className="page" style={{background:bg1}}>
+  <div className={isFooter? "page-footer" : "page"} style={{background:bg1}}>
   
     <div className="col100">
       <div className="row center mt-sm mb-sm">
@@ -34,7 +36,9 @@ function Explore() {
         explore==='audio' ?
         <ExploreAudioResults/>    
         :
-        <ExploreVisualResults/>
+        <div className="overflow-y center">
+          <VisualAllNfts/>
+        </div>
       }
     </div>
   </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactDom from 'react-dom';
 import { useThemeStyles } from '../../context/ThemeContext';
 import { useToggleModal } from '../../context/ModalContext';
@@ -11,13 +11,17 @@ export default function LoginSuccessModal() {
   const { toggleLoginSuccessModal } = useToggleModal();
 
   //theme states
-  const { bg2, text1, btn } = useThemeStyles();
+  const { bg2, text1, btn, text1Active } = useThemeStyles();
 
   const { currentAvatar } = useAuthData();
 
   function close() {
     toggleLoginSuccessModal();
   }
+
+  useEffect(() => {
+    setTimeout(close, 2000)
+  }, [toggleLoginSuccessModal])
 
   return ReactDom.createPortal(
 
@@ -39,9 +43,9 @@ export default function LoginSuccessModal() {
             </button>
           </div>
 
-      {/* <button onClick={ toggleLoginSuccessModal } className="btn-icon-circle close-button">
+      <button style={{color:text1Active}} onClick={ toggleLoginSuccessModal } className="btn-icon-circle close-button">
         <FaIcons.FaPlus className="rotate90"/>
-      </button> */}
+      </button>
     </div>,
     document.getElementById('portal')
   )

@@ -1,6 +1,6 @@
-import React, { useContext, useState } from "react";
-import { useAuthData } from "./AuthContext";
-import axios from "axios";
+import React, { useContext } from "react";
+// import { useAuthData } from "./AuthContext";
+// import axios from "axios";
 
 const Web3Context = React.createContext();
 const Web3Functions = React.createContext();
