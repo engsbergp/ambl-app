@@ -156,8 +156,8 @@
       -ms-flex-pack: center;
           justify-content: center;
   position: absolute;
-  max-height: 3rem;
-  max-width: 3rem;
+  max-height: 2.5rem;
+  max-width: 2.5rem;
   top: .5rem;
   right: .5rem;
   background: transparent;
@@ -233,7 +233,6 @@
   width: 12rem;
   height: 7rem;
   border-radius: 20px;
-  background: #393939;
 }
 
 .card-md {
@@ -253,10 +252,81 @@
   width: 12rem;
   height: 14rem;
   border-radius: 20px;
-  background: #393939;
+}
+
+.card-lg {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 16rem;
+  height: 18rem;
+  border-radius: 20px;
+}
+
+.card-xl {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 20rem;
+  height: 22rem;
+  border-radius: 20px;
+}
+
+.visualization {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  overflow: hidden;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100vw;
+  height: calc(100vh - 2.75rem);
+  margin-top: 2.75rem;
+}
+
+.page-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  overflow: hidden;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 100%;
   height: calc(91vh - 2.75rem);
   margin-top: 2.75rem;
@@ -444,6 +514,13 @@
   overflow-x: hidden;
 }
 
+.overflow-x {
+  width: 100vw;
+  height: 100%;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+
 .overflow-none {
   overflow: hidden;
 }
@@ -488,10 +565,14 @@
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   padding: 2rem;
+  -webkit-box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.4);
+          box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.4);
 }
 
 .modal-bg {
   position: fixed;
+  background: #222222;
+  opacity: 60%;
   top: 0;
   left: 0;
   bottom: 0;

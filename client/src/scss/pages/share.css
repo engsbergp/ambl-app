@@ -1,17 +1,4 @@
-.share {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 100vw;
-  height: 91vh;
-  overflow: hidden;
-}
-
-.share-latest {
+.share-instagram {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -25,13 +12,13 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 33%;
+  height: 40%;
   width: 100%;
   margin-top: 1rem;
   outline: 1px solid #999;
 }
 
-.share-trending {
+.share-twitter {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -45,11 +32,11 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 33%;
+  height: 40%;
   width: 100%;
 }
 
-.share-connections {
+.share-contact {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -63,7 +50,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 34%;
+  height: 10%;
   width: 100%;
   outline: 1px solid #999;
 }

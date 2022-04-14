@@ -1,74 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap");
-.bg-white {
-  background: #ddd;
-}
-
-.bg-grey100 {
-  background: #999;
-}
-
-.bg-grey200 {
-  background: #888;
-}
-
-.bg-grey300 {
-  background: #777;
-}
-
-.bg-grey400 {
-  background: #666;
-}
-
-.bg-grey500 {
-  background: #555;
-}
-
-.modal-primary {
-  background: #777;
-  color: #bbb;
-}
-
-.btn-grey {
-  background: #777;
-  color: #eee;
-  -webkit-transition: .2s;
-  transition: .2s;
-  font-size: .9rem;
-}
-
-.btn-grey:hover {
-  background: #656565;
-}
-
-.disabled {
-  background: #777;
-}
-
-.select-white {
-  background: #ddd;
-  color: #252525;
-}
-
-.bg-white {
-  background: #eee;
-}
-
-.btn-transparent {
-  background: transparent;
-  color: #bbb;
-  -webkit-transition: .2s;
-  transition: .2s;
-}
-
-.btn-transparent:hover {
-  background: #666;
-}
-
-.text-primary {
-  color: #bbb;
-  font-size: .9rem;
-}
-
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -78,7 +8,6 @@
 }
 
 .App {
-  background: #444;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
