@@ -27,7 +27,7 @@ app.post('/login', (req, res) => {
     // clientId: process.env.REACT_APP_SPOTIFY_CLIENT_ID,
     // clientSecret: process.env.REACT_APP_SPOTIFY_CLIENT_SECRET,
 
-    redirectUri: 'http://192.168.1.12',
+    redirectUri: 'http://44.198.165.159',
     clientId: process.env.DEV_REACT_APP_SPOTIFY_CLIENT_ID,
     clientSecret: process.env.DEV_REACT_APP_SPOTIFY_CLIENT_SECRET,
   })
@@ -60,7 +60,7 @@ app.post('/refresh', (req, res) => {
     // clientId: process.env.REACT_APP_SPOTIFY_CLIENT_ID,
     // clientSecret: process.env.REACT_APP_SPOTIFY_CLIENT_SECRET,
 
-    redirectUri: 'http://192.168.1.12',
+    redirectUri: 'http://44.198.165.159',
     clientId: process.env.DEV_REACT_APP_SPOTIFY_CLIENT_ID,
     clientSecret: process.env.DEV_REACT_APP_SPOTIFY_CLIENT_SECRET,
 
