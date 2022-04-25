@@ -26,7 +26,7 @@ export function SpotifyProvider( {children} ) {
   //post to server port 8080
   //set global access to auth, refresh, and expiration
   useEffect(() => {
-    axios.post(`http://44.198.165.159/login`, {
+    axios.post(`http://ambl.io/login`, {
       code,
     }).then(res => {
       setAccessToken(res.data.accessToken);
@@ -51,7 +51,7 @@ export function SpotifyProvider( {children} ) {
 
     //reset access token every 59 minutes
     const interval = setInterval(() => {
-      axios.post(`http://44.198.165.159/refresh`, {
+      axios.post(`http://ambl.io/refresh`, {
         refreshToken,
       }).then(res => {
         setAccessToken(res.data.accessToken);
