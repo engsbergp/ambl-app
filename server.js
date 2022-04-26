@@ -7,7 +7,7 @@ const SpotifyWebApi = require('spotify-web-api-node');
 require('dotenv').config();
 
 const app = express();
-// const PORT = process.env.PORT || 80;
+const PORT = process.env.PORT || 8080;
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -27,7 +27,7 @@ app.post('/login', (req, res) => {
     // clientId: process.env.REACT_APP_SPOTIFY_CLIENT_ID,
     // clientSecret: process.env.REACT_APP_SPOTIFY_CLIENT_SECRET,
 
-    redirectUri: 'http://ambl.io',
+    redirectUri: 'https://ambl.io',
     clientId: process.env.DEV_REACT_APP_SPOTIFY_CLIENT_ID,
     clientSecret: process.env.DEV_REACT_APP_SPOTIFY_CLIENT_SECRET,
   })
@@ -60,7 +60,7 @@ app.post('/refresh', (req, res) => {
     // clientId: process.env.REACT_APP_SPOTIFY_CLIENT_ID,
     // clientSecret: process.env.REACT_APP_SPOTIFY_CLIENT_SECRET,
 
-    redirectUri: 'http://ambl.io',
+    redirectUri: 'https://ambl.io',
     clientId: process.env.DEV_REACT_APP_SPOTIFY_CLIENT_ID,
     clientSecret: process.env.DEV_REACT_APP_SPOTIFY_CLIENT_SECRET,
 

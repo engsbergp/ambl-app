@@ -35,7 +35,7 @@ function Header() {
   //spotify states
   const { accessToken } = useSpotifyTokens();
   const { userName } = useSpotifyUserData();
-  const DEV_SPOTIFY_AUTH_URL = "https://accounts.spotify.com/authorize?client_id=f95d203d997545f18e89491cb629f748&response_type=code&redirect_uri=http://ambl.io&scope=streaming%20user-read-email%20user-read-private%20user-library-read%20user-library-modify%20user-read-playback-state%20user-modify-playback-state%20user-read-recently-played%20playlist-read-private%20user-top-read%20user-read-currently-playing%20playlist-read-collaborative%20playlist-modify-private%20user-read-playback-position"
+  const DEV_SPOTIFY_AUTH_URL = "https://accounts.spotify.com/authorize?client_id=f95d203d997545f18e89491cb629f748&response_type=code&redirect_uri=https://ambl.io&scope=streaming%20user-read-email%20user-read-private%20user-library-read%20user-library-modify%20user-read-playback-state%20user-modify-playback-state%20user-read-recently-played%20playlist-read-private%20user-top-read%20user-read-currently-playing%20playlist-read-collaborative%20playlist-modify-private%20user-read-playback-position"
   // const SPOTIFY_AUTH_URL = "https://accounts.spotify.com/authorize?client_id=7a3d7b5b794244a58b1ee120f9fc3989&response_type=code&redirect_uri=http://localhost:8080&scope=streaming%20user-read-email%20user-read-private%20user-library-read%20user-library-modify%20user-read-playback-state%20user-modify-playback-state%20user-read-recently-played%20playlist-read-private%20user-top-read%20user-read-currently-playing%20playlist-read-collaborative%20playlist-modify-private%20user-read-playback-position"
   
   //theme states
